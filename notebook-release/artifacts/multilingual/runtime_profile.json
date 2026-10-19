@@ -1,0 +1,13 @@
+{
+  "runtime": "CPU only, ONNX int8, two threads",
+  "load_seconds": 2.13220980000915,
+  "rss_before_mb": 18.37109375,
+  "rss_after_warmup_mb": 580.984375,
+  "memory_delta_mb": 562.61328125,
+  "inference": {
+    "inference_ms": 51.82939997757785,
+    "truncated": false,
+    "input_words": 4,
+    "processed_words": 4
+  }
+}

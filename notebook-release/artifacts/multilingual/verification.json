@@ -1,0 +1,124 @@
+{
+  "language_state_tests": 93,
+  "portable_integration_tests": 18,
+  "executed_notebook_code_cells": 12,
+  "optional_semantic_fresh_environment_test": "passed CPU FP32 model load, hybrid turn, skipped transformer/ML on critical, default state prediction, JSON serialization",
+  "pip_check": "No broken requirements found",
+  "preservation": {
+    "source_sha256": "85e40ee05e7241ae263ab20a9f3362ea6be9f89c86206fce13e86d0169c68520",
+    "original_sha256": "af8972d40cf290df746ace5569feb78060991c1785fc2ffdbe4108220c2eeaca",
+    "deployed_sha256": "0c1674c14c74e222bd5dc310502bdb03372389ddc6c9680e788bcb8312d1bc4a",
+    "candidate_sha256": "fee288298d6fafe63d053cc8fa4047442bb7949abb77022058067a27375eec5e",
+    "projection_sha256": "7118f2db8f1df5d54a01dc980868463a5adfd9913c60e60504fdf9b9b3c332e1"
+  },
+  "facts_view_preserved": true,
+  "ml_feature_schema_changed": false,
+  "model_promoted": false,
+  "contract": "process_turn(state,message,previous_question_id=None); defer known critical ML by default, predict_from_state separately",
+  "handoff_manifest": {
+    ".gitignore": {
+      "bytes": 129,
+      "sha256": "b1666f988652e66e91fa6f24f39e4ada00ee1321086daeb614d009b59dfd334c"
+    },
+    "adaptive_questions.py": {
+      "bytes": 8256,
+      "sha256": "1269d14e3436b3fbe86a0ebaddb8266d166782c0c86e3337b40b87540c513e92"
+    },
+    "candidate_model.joblib": {
+      "bytes": 15263160,
+      "sha256": "fee288298d6fafe63d053cc8fa4047442bb7949abb77022058067a27375eec5e"
+    },
+    "clinical_rules.py": {
+      "bytes": 9160,
+      "sha256": "b5d093e31260d3be968d32a305c15eb9330493e0c1752f46f55eff8b9493f980"
+    },
+    "clinical_state.py": {
+      "bytes": 47682,
+      "sha256": "231ef51707ad0461c660e5dd09b0ddfd6d780fa39eee1b2d4433d30d8d37bc76"
+    },
+    "compatibility.json": {
+      "bytes": 942,
+      "sha256": "95baa4b07869f1879ca1898327bd29bfdb8e5f881f129fa790ec4928df20fb7f"
+    },
+    "english_feature_reference.json": {
+      "bytes": 10657,
+      "sha256": "03a8c453fd577c99cba97b3d051d7040bb5241eab22ada455f19628be59af661"
+    },
+    "evaluation_summary.json": {
+      "bytes": 16377,
+      "sha256": "18a74b03287de7724a6bf22181ceb8948d180de9a67ea3279839c8e0604a19d2"
+    },
+    "example.py": {
+      "bytes": 773,
+      "sha256": "84e2b96a9ef1092fbac9c9b481f9023adebb4f925c80d96021d0f7dd605b527b"
+    },
+    "ml_features.py": {
+      "bytes": 4176,
+      "sha256": "7118f2db8f1df5d54a01dc980868463a5adfd9913c60e60504fdf9b9b3c332e1"
+    },
+    "multilingual_nlp.py": {
+      "bytes": 21882,
+      "sha256": "f82c0f16b4eb1341ad48bf4f882ff1e5e9f8f3d453d89a665e5b80c84f5a72c7"
+    },
+    "README.md": {
+      "bytes": 7867,
+      "sha256": "89b21de3892cb7f10b14e9efe0baf4e14caf3028e24b722b6650c75629dcc13e"
+    },
+    "requirements-semantic.txt": {
+      "bytes": 143,
+      "sha256": "eeb74f5175e12e2aab93e91979d85ab24cfe733d4560579a30a805e0787ce2c4"
+    },
+    "requirements.txt": {
+      "bytes": 167,
+      "sha256": "f548299cc8d46b55d54bc2ffdd3f4e95a47377853253f195b428a5881773f714"
+    },
+    "test_integration.py": {
+      "bytes": 8553,
+      "sha256": "9d103fd21258ea19677d60ff14d428b952f0727b96c7294c85812efdbc5a3571"
+    },
+    "triage_pipeline.py": {
+      "bytes": 16118,
+      "sha256": "bae22c2cf3da4120ad80bd64321b3dc137af84c17d7693bf8cfa42159cd8dfb3"
+    },
+    "triage_tuning.py": {
+      "bytes": 2151,
+      "sha256": "fc0e1c1182be6e80c098e27c70c7475867d4040325a207ff52105baec26e1639"
+    },
+    "labeling_binary/base.py": {
+      "bytes": 7768,
+      "sha256": "0906be94b32e64ef3f5d2c9297a17f4bffb6f013ae20bbd0966d02ca633f086e"
+    },
+    "labeling_binary/context.py": {
+      "bytes": 12990,
+      "sha256": "500ce0d6be5a1a65fc2f702e3ccc8407329bd89f93329e6cd7c06eb5184e3ca4"
+    },
+    "labeling_binary/rules.v3.json": {
+      "bytes": 18347,
+      "sha256": "c1592d3b4c511192051f567223271b6430aee5dadfa2037fc45ad1efffd9ca58"
+    },
+    "labeling_binary/__init__.py": {
+      "bytes": 77,
+      "sha256": "115487b17d14aaa16e3900ad6c6a087e56098ab81d0af878627c60f62e199851"
+    }
+  },
+  "phase1": {
+    "commit": "45933cb5bce7c83e9deb743e95c9f741ac7293ca",
+    "branch": "feat/ai-prototype-handoff",
+    "pr": "https://github.com/Asser-Saadaoui/Hackcure_Hackathon/pull/1",
+    "github_status": "merged",
+    "merge_commit": "7e3cfbbc0b222e365126bb1422dd072715a4a1f5"
+  },
+  "phase2": {
+    "commit": "7eae8f2d86b4dc7908bd31bd02dc98bd7d1f459e",
+    "branch": "feat/ai-context-finalization",
+    "pr": "https://github.com/Asser-Saadaoui/Hackcure_Hackathon/pull/3",
+    "github_status": "open"
+  },
+  "github_final_archive": {
+    "exact_byte_files": 20,
+    "line_ending_only": [
+      "labeling_binary/__init__.py"
+    ],
+    "all_files_match": true
+  }
+}

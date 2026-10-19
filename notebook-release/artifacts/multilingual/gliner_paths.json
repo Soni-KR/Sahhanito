@@ -1,0 +1,4 @@
+{
+  "tokenizer.json": "triage_artifacts\\multilingual\\research_cache\\models--onnx-community--gliner_multi-v2.1\\snapshots\\6ddaeb9413b0e71ad8457da1aab378a165b24058\\tokenizer.json",
+  "onnx/model_quantized.onnx": "triage_artifacts\\multilingual\\research_cache\\models--onnx-community--gliner_multi-v2.1\\snapshots\\6ddaeb9413b0e71ad8457da1aab378a165b24058\\onnx\\model_quantized.onnx"
+}

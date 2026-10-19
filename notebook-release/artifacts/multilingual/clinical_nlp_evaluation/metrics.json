@@ -1,0 +1,150 @@
+{
+  "reference_cases": 15,
+  "reference_sha256": "ac33f1965c85e43f13926c12a1860c79bfc492793565cc87f41ba7021bf925ca",
+  "nlp_signature": "8609f41521d092549bec2780a9e92ad50c7094e48214445acf9cf49f06b3a4a4",
+  "entity_identity": {
+    "tp": 15,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "entity_exact_span_and_name": {
+    "tp": 15,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "entity_span_detection": {
+    "tp": 15,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "per_kind": {
+    "symptom": {
+      "tp": 10,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "condition": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "medication": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "vital": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "attributes": [
+    {
+      "attribute": "dose_value",
+      "reference_count": 1,
+      "entity_found_count": 1,
+      "correct_count": 1,
+      "end_to_end_accuracy": 1.0,
+      "accuracy_on_found_entities": 1.0
+    },
+    {
+      "attribute": "duration_seconds",
+      "reference_count": 1,
+      "entity_found_count": 1,
+      "correct_count": 1,
+      "end_to_end_accuracy": 1.0,
+      "accuracy_on_found_entities": 1.0
+    },
+    {
+      "attribute": "experiencer",
+      "reference_count": 15,
+      "entity_found_count": 15,
+      "correct_count": 15,
+      "end_to_end_accuracy": 1.0,
+      "accuracy_on_found_entities": 1.0
+    },
+    {
+      "attribute": "medication_role",
+      "reference_count": 2,
+      "entity_found_count": 2,
+      "correct_count": 2,
+      "end_to_end_accuracy": 1.0,
+      "accuracy_on_found_entities": 1.0
+    },
+    {
+      "attribute": "onset",
+      "reference_count": 1,
+      "entity_found_count": 1,
+      "correct_count": 1,
+      "end_to_end_accuracy": 1.0,
+      "accuracy_on_found_entities": 1.0
+    },
+    {
+      "attribute": "severity",
+      "reference_count": 1,
+      "entity_found_count": 1,
+      "correct_count": 1,
+      "end_to_end_accuracy": 1.0,
+      "accuracy_on_found_entities": 1.0
+    },
+    {
+      "attribute": "status",
+      "reference_count": 15,
+      "entity_found_count": 15,
+      "correct_count": 15,
+      "end_to_end_accuracy": 1.0,
+      "accuracy_on_found_entities": 1.0
+    },
+    {
+      "attribute": "temporality",
+      "reference_count": 15,
+      "entity_found_count": 15,
+      "correct_count": 15,
+      "end_to_end_accuracy": 1.0,
+      "accuracy_on_found_entities": 1.0
+    },
+    {
+      "attribute": "value",
+      "reference_count": 1,
+      "entity_found_count": 1,
+      "correct_count": 1,
+      "end_to_end_accuracy": 1.0,
+      "accuracy_on_found_entities": 1.0
+    }
+  ],
+  "reference_status": "assistant_authored_pending_human_review",
+  "reference_status_counts": {
+    "assistant_authored_pending_human_review": 15
+  },
+  "reference_reviewers": [],
+  "caveats": [
+    "Not a clinician-validated clinical benchmark or independent human annotation.",
+    "Entities are latest structured facts in four scored domains; other fact kinds are outside scope.",
+    "Name identity and typed evidence-span detection are separate metrics. Attributes may align by exact typed span when names differ.",
+    "Attribute accuracy on found entities excludes misses; end-to-end accuracy includes misses.",
+    "Attribute rows cover specified reference attributes only; no claim of attribute precision on unspecified values.",
+    "No urgency labels, doctor answers, original urgency metadata or ML outputs used."
+  ]
+}

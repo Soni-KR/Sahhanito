@@ -1,0 +1,531 @@
+{
+  "reference": "Assistant-authored synthetic references; no native-speaker/clinician review; no independent clinical gold.",
+  "development_cases": 12,
+  "challenge_cases": 24,
+  "challenge_entities": 31,
+  "reference_sha256": "ed8e1719eedd455bbf049f2def2d2cfbd97ce33d4b3c3aa9f78aa70a8fd76c35",
+  "approaches": {
+    "phase1": {
+      "exact_span_entities": {
+        "precision": 0.9642857142857143,
+        "recall": 0.8709677419354839,
+        "f1": 0.9152542372881356,
+        "tp": 27,
+        "fp": 1,
+        "fn": 4
+      },
+      "complete_facts_overlap": {
+        "precision": 0.8571428571428571,
+        "recall": 0.7741935483870968,
+        "f1": 0.8135593220338982,
+        "tp": 24,
+        "fp": 4,
+        "fn": 7
+      },
+      "canonical_accuracy_on_overlap": 1.0,
+      "attributes": {
+        "experiencer": {
+          "correct": 27,
+          "matched": 28,
+          "accuracy": 0.9642857142857143
+        },
+        "status": {
+          "correct": 26,
+          "matched": 28,
+          "accuracy": 0.9285714285714286
+        },
+        "duration_seconds": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        },
+        "temporality": {
+          "correct": 27,
+          "matched": 28,
+          "accuracy": 0.9642857142857143
+        },
+        "onset": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        },
+        "medication_role": {
+          "correct": 2,
+          "matched": 2,
+          "accuracy": 1.0
+        },
+        "severity": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        },
+        "value": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        },
+        "onset_seconds": {
+          "correct": 0,
+          "matched": 1,
+          "accuracy": 0.0
+        }
+      },
+      "unsupported_fact_rate": 0.0,
+      "critical_symptom_recall": 0.3333333333333333,
+      "latency_ms": {
+        "median": 0.45464999857358634,
+        "maximum": 12.362199980998412,
+        "mean": 0.9481791651827128
+      },
+      "incorrect_or_unsupported_full_fact_rate": 0.14285714285714285,
+      "unsupported_fact_rate_definition": "Unmatched clinical entity spans; incorrect canonical concepts/context are penalized separately in complete_facts_overlap and incorrect_or_unsupported_full_fact_rate."
+    },
+    "improved_dictionary": {
+      "exact_span_entities": {
+        "precision": 0.9655172413793104,
+        "recall": 0.9032258064516129,
+        "f1": 0.9333333333333333,
+        "tp": 28,
+        "fp": 1,
+        "fn": 3
+      },
+      "complete_facts_overlap": {
+        "precision": 0.896551724137931,
+        "recall": 0.8387096774193549,
+        "f1": 0.8666666666666666,
+        "tp": 26,
+        "fp": 3,
+        "fn": 5
+      },
+      "canonical_accuracy_on_overlap": 1.0,
+      "attributes": {
+        "experiencer": {
+          "correct": 28,
+          "matched": 29,
+          "accuracy": 0.9655172413793104
+        },
+        "status": {
+          "correct": 27,
+          "matched": 29,
+          "accuracy": 0.9310344827586207
+        },
+        "duration_seconds": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        },
+        "temporality": {
+          "correct": 28,
+          "matched": 29,
+          "accuracy": 0.9655172413793104
+        },
+        "onset": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        },
+        "medication_role": {
+          "correct": 3,
+          "matched": 3,
+          "accuracy": 1.0
+        },
+        "severity": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        },
+        "dose_value": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        },
+        "value": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        },
+        "onset_seconds": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        }
+      },
+      "unsupported_fact_rate": 0.0,
+      "critical_symptom_recall": 0.3333333333333333,
+      "latency_ms": {
+        "median": 0.45310000132303685,
+        "maximum": 4.94409998646006,
+        "mean": 0.6475458346055044
+      },
+      "incorrect_or_unsupported_full_fact_rate": 0.10344827586206896,
+      "unsupported_fact_rate_definition": "Unmatched clinical entity spans; incorrect canonical concepts/context are penalized separately in complete_facts_overlap and incorrect_or_unsupported_full_fact_rate."
+    },
+    "gliner_contextual_native": {
+      "exact_span_entities": {
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 31
+      },
+      "complete_facts_overlap": {
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 31
+      },
+      "canonical_accuracy_on_overlap": null,
+      "attributes": {},
+      "unsupported_fact_rate": 0.0,
+      "critical_symptom_recall": 0.0,
+      "latency_ms": {
+        "median": 47.611349989892915,
+        "maximum": 59.020299988333136,
+        "mean": 48.18343332832834
+      },
+      "incorrect_or_unsupported_full_fact_rate": null,
+      "unsupported_fact_rate_definition": "Unmatched clinical entity spans; incorrect canonical concepts/context are penalized separately in complete_facts_overlap and incorrect_or_unsupported_full_fact_rate."
+    },
+    "minilm_span_context": {
+      "exact_span_entities": {
+        "precision": 0.17721518987341772,
+        "recall": 0.45161290322580644,
+        "f1": 0.2545454545454546,
+        "tp": 14,
+        "fp": 65,
+        "fn": 17
+      },
+      "complete_facts_overlap": {
+        "precision": 0.1518987341772152,
+        "recall": 0.3870967741935484,
+        "f1": 0.21818181818181817,
+        "tp": 12,
+        "fp": 67,
+        "fn": 19
+      },
+      "canonical_accuracy_on_overlap": 0.7894736842105263,
+      "attributes": {
+        "experiencer": {
+          "correct": 17,
+          "matched": 19,
+          "accuracy": 0.8947368421052632
+        },
+        "status": {
+          "correct": 17,
+          "matched": 19,
+          "accuracy": 0.8947368421052632
+        },
+        "duration_seconds": {
+          "correct": 0,
+          "matched": 1,
+          "accuracy": 0.0
+        },
+        "temporality": {
+          "correct": 18,
+          "matched": 19,
+          "accuracy": 0.9473684210526315
+        },
+        "onset_seconds": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        }
+      },
+      "unsupported_fact_rate": 0.759493670886076,
+      "critical_symptom_recall": 0.3333333333333333,
+      "latency_ms": {
+        "median": 32.1389500022633,
+        "maximum": 71.09790001413785,
+        "mean": 32.769604165271936
+      },
+      "incorrect_or_unsupported_full_fact_rate": 0.8481012658227848,
+      "unsupported_fact_rate_definition": "Unmatched clinical entity spans; incorrect canonical concepts/context are penalized separately in complete_facts_overlap and incorrect_or_unsupported_full_fact_rate."
+    },
+    "conservative_hybrid": {
+      "exact_span_entities": {
+        "precision": 0.9655172413793104,
+        "recall": 0.9032258064516129,
+        "f1": 0.9333333333333333,
+        "tp": 28,
+        "fp": 1,
+        "fn": 3
+      },
+      "complete_facts_overlap": {
+        "precision": 0.896551724137931,
+        "recall": 0.8387096774193549,
+        "f1": 0.8666666666666666,
+        "tp": 26,
+        "fp": 3,
+        "fn": 5
+      },
+      "canonical_accuracy_on_overlap": 1.0,
+      "attributes": {
+        "experiencer": {
+          "correct": 28,
+          "matched": 29,
+          "accuracy": 0.9655172413793104
+        },
+        "status": {
+          "correct": 27,
+          "matched": 29,
+          "accuracy": 0.9310344827586207
+        },
+        "duration_seconds": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        },
+        "temporality": {
+          "correct": 28,
+          "matched": 29,
+          "accuracy": 0.9655172413793104
+        },
+        "onset": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        },
+        "medication_role": {
+          "correct": 3,
+          "matched": 3,
+          "accuracy": 1.0
+        },
+        "severity": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        },
+        "dose_value": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        },
+        "value": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        },
+        "onset_seconds": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        }
+      },
+      "unsupported_fact_rate": 0.0,
+      "critical_symptom_recall": 0.3333333333333333,
+      "latency_ms": {
+        "median": 50.237299990840256,
+        "maximum": 59.049999981652945,
+        "mean": 50.187895832398986
+      },
+      "incorrect_or_unsupported_full_fact_rate": 0.10344827586206896,
+      "unsupported_fact_rate_definition": "Unmatched clinical entity spans; incorrect canonical concepts/context are penalized separately in complete_facts_overlap and incorrect_or_unsupported_full_fact_rate."
+    },
+    "gliner_fp32_native": {
+      "exact_span_entities": {
+        "precision": 1.0,
+        "recall": 0.3225806451612903,
+        "f1": 0.4878048780487805,
+        "tp": 10,
+        "fp": 0,
+        "fn": 21
+      },
+      "complete_facts_overlap": {
+        "precision": 0.9,
+        "recall": 0.2903225806451613,
+        "f1": 0.4390243902439024,
+        "tp": 9,
+        "fp": 1,
+        "fn": 22
+      },
+      "canonical_accuracy_on_overlap": 1.0,
+      "attributes": {
+        "status": {
+          "correct": 9,
+          "matched": 10,
+          "accuracy": 0.9
+        },
+        "experiencer": {
+          "correct": 10,
+          "matched": 10,
+          "accuracy": 1.0
+        },
+        "temporality": {
+          "correct": 9,
+          "matched": 10,
+          "accuracy": 0.9
+        },
+        "onset_seconds": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        }
+      },
+      "unsupported_fact_rate": 0.0,
+      "critical_symptom_recall": 0.0,
+      "latency_ms": {
+        "median": 394.8207000066759,
+        "maximum": 442.0584999897983,
+        "mean": 394.21654166775016
+      },
+      "incorrect_or_unsupported_full_fact_rate": 0.1,
+      "unsupported_fact_rate_definition": "Unmatched clinical entity spans; incorrect canonical concepts/context are penalized separately in complete_facts_overlap and incorrect_or_unsupported_full_fact_rate."
+    },
+    "gliner_fp32_conservative_hybrid": {
+      "exact_span_entities": {
+        "precision": 0.9655172413793104,
+        "recall": 0.9032258064516129,
+        "f1": 0.9333333333333333,
+        "tp": 28,
+        "fp": 1,
+        "fn": 3
+      },
+      "complete_facts_overlap": {
+        "precision": 0.896551724137931,
+        "recall": 0.8387096774193549,
+        "f1": 0.8666666666666666,
+        "tp": 26,
+        "fp": 3,
+        "fn": 5
+      },
+      "canonical_accuracy_on_overlap": 1.0,
+      "attributes": {
+        "status": {
+          "correct": 27,
+          "matched": 29,
+          "accuracy": 0.9310344827586207
+        },
+        "experiencer": {
+          "correct": 28,
+          "matched": 29,
+          "accuracy": 0.9655172413793104
+        },
+        "temporality": {
+          "correct": 28,
+          "matched": 29,
+          "accuracy": 0.9655172413793104
+        },
+        "duration_seconds": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        },
+        "onset": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        },
+        "medication_role": {
+          "correct": 3,
+          "matched": 3,
+          "accuracy": 1.0
+        },
+        "severity": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        },
+        "dose_value": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        },
+        "value": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        },
+        "onset_seconds": {
+          "correct": 1,
+          "matched": 1,
+          "accuracy": 1.0
+        }
+      },
+      "unsupported_fact_rate": 0.0,
+      "critical_symptom_recall": 0.3333333333333333,
+      "latency_ms": {
+        "median": 380.8970000100089,
+        "maximum": 431.7657999927178,
+        "mean": 320.4261916653195
+      },
+      "incorrect_or_unsupported_full_fact_rate": 0.10344827586206896,
+      "unsupported_fact_rate_definition": "Unmatched clinical entity spans; incorrect canonical concepts/context are penalized separately in complete_facts_overlap and incorrect_or_unsupported_full_fact_rate."
+    }
+  },
+  "selection": "Improved deterministic dictionaries by default. FP32 GLiNER is explicit opt-in research, not a validated replacement.",
+  "ml_validation": {
+    "records": 2546,
+    "partition": "validation_selection",
+    "classifier_retrained": false,
+    "threshold_tuned": false,
+    "calibration_refitted": false,
+    "threshold": 0.15,
+    "candidate_sha256": "fee288298d6fafe63d053cc8fa4047442bb7949abb77022058067a27375eec5e",
+    "extraction_signature": "6d8a59cfc1ad759f7bd9a19ffad24f30c41b5ed6bb1da1290f8b2722ac2f1fff",
+    "reference": "English weak annotations, already used in model development; not independent clinical accuracy",
+    "before": {
+      "threshold": 0.15,
+      "macro_f1": 0.9119519386375224,
+      "emergency_precision": 0.7900641025641025,
+      "emergency_recall": 0.9517374517374517,
+      "false_positives": 131,
+      "false_negatives": 25,
+      "true_positives": 493,
+      "true_negatives": 1897,
+      "roc_auc": 0.9801104993412686
+    },
+    "after": {
+      "threshold": 0.15,
+      "macro_f1": 0.9113323133894147,
+      "emergency_precision": 0.7897271268057785,
+      "emergency_recall": 0.9498069498069498,
+      "false_positives": 131,
+      "false_negatives": 26,
+      "true_positives": 492,
+      "true_negatives": 1897,
+      "roc_auc": 0.9798915568146338
+    },
+    "after_score_diagnostics": {
+      "brier": 0.03674402217771297,
+      "log_loss": 0.1364631304835819,
+      "ece_10_bins": 0.010696055180422458
+    },
+    "changed_predictions": 3,
+    "mean_absolute_score_change": 0.0007767102046402096,
+    "source_and_models_preserved": true,
+    "phase1_reference": {
+      "threshold": 0.15,
+      "macro_f1": 0.9108231173380035,
+      "emergency_precision": 0.7884615384615384,
+      "emergency_recall": 0.9498069498069498,
+      "false_positives": 132,
+      "false_negatives": 26,
+      "true_positives": 492,
+      "true_negatives": 1896,
+      "roc_auc": 0.9799591434206819
+    }
+  },
+  "threshold_changed": false,
+  "models_retrained": false,
+  "models_promoted": false,
+  "critical_symptom_challenge_recall": "1/3: two unfamiliar respiratory complaints missed; insufficient-input safeguards retain abstention.",
+  "blockers": [
+    "No accessible task-specific manually annotated Tunisian clinical spans/context for justified fine-tuning.",
+    "Native-speaker/clinician review unavailable.",
+    "Existing ML context-feature regression remains unresolved."
+  ],
+  "model_artifact": {
+    "identifier": "onnx-community/gliner_multi-v2.1",
+    "revision": "6ddaeb9413b0e71ad8457da1aab378a165b24058",
+    "file": "onnx/model.onnx",
+    "bytes": 1157129714,
+    "sha256": "57af7f3d8d72a3ca4e5619c247344b4b5ee362a5ebcf307c0634d67b65e721c0",
+    "git_included": false
+  },
+  "software_tests": 93,
+  "portable_integration_tests": 18,
+  "final_contract_review": "Added regression guards for same-turn known condition plus ambiguous complaint, and old routine context plus new unrecognized input."
+}

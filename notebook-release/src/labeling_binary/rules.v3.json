@@ -1,0 +1,461 @@
+{
+  "version": "3.0.0",
+  "seed": 42,
+  "reviewed_on": "2026-10-08",
+  "scope": "English question-only weak research annotations, not clinically validated",
+  "max_combination_chars": 400,
+  "concepts": {
+    "breath": "\\b(?:difficulty (?:in )?breathing|difficult(?:y)? to breathe|short(?:ness)? of breath|shortness of breathing|breathless(?:ness)?|trouble breathing|struggling to breathe)\\b",
+    "breath_severe": "\\b(?:(?:severe|extreme|severely|extremely) (?:difficulty (?:in )?breathing|shortness of breath|breathlessness|trouble breathing)|(?:cannot|can\\x27t|unable to) breathe|gasping (?:for (?:air|breath))?|choking and (?:cannot|can\\x27t) (?:breathe|speak)|(?:cannot|can\\x27t|unable to) (?:speak|get (?:any )?words out) (?:because|due to) (?:of )?(?:breathlessness|difficulty breathing))\\b",
+    "cyanosis": "\\b(?:(?:lips|tongue|skin) (?:are |is |have |has |turned |turning |become |becoming )*(?:blue|grey|gray)|(?:blue|grey|gray) (?:lips|tongue))\\b",
+    "chest": "\\b(?:chest (?:pain|discomfort|pressure|tightness|heaviness)|(?:pain|pressure|tightness|heaviness) (?:in|on) (?:my |his |her |the )?chest)\\b",
+    "sweat": "\\b(?:sweating|sweaty|cold sweat|diaphoresis)\\b",
+    "nausea": "\\b(?:nausea|nauseous|feel(?:ing)? sick|vomiting)\\b",
+    "lightheaded": "\\b(?:lightheaded(?:ness)?|light-headed|feeling faint)\\b",
+    "radiation": "\\b(?:pain (?:spreads?|radiat(?:es|ing)) (?:to|into|down) (?:my |the |both |left |right )*(?:arm|arms|jaw|neck|back))\\b",
+    "persistent": "\\b(?:does not go away|doesn\\x27t go away|won\\x27t go away|not going away|persistent|continuous|constant)\\b",
+    "face_droop": "\\b(?:facial droop(?:ing)?|(?:one side of (?:my |his |her |the )?face|(?:my |his |her )?face) (?:is |has |was )*(?:droop(?:ing|ed)?|dropped)|droop(?:ing)? (?:on )?(?:one|1) side of (?:my |his |her |the )?face)\\b",
+    "speech": "\\b(?:slurred speech|slurring (?:my |his |her )?words|difficulty (?:speaking|talking)|(?:cannot|can\\x27t|unable to) speak)\\b",
+    "one_side": "\\b(?:(?:one-sided|one sided) (?:weakness|numbness)|(?:weakness|numbness|paralysis) (?:down|on|in|of) (?:the |my |his |her )?(?:(?:one|1|left|right) side(?: of (?:my |his |her |the )?(?:body|face))?|(?:left|right) (?:arm|leg)))\\b|\\b(?:left|right) arm (?:is |has become )?weak\\b",
+    "unresponsive": "\\b(?:unconscious|unresponsive|not responding to (?:my voice|voice|touch|commands)|(?:cannot|can\\x27t|unable to) (?:wake (?:him|her|them|up)|be (?:woken|awakened))|(?:has|have) not woken up|not breathing)\\b",
+    "faint": "\\b(?:fainted|fainting|lost consciousness|loss of consciousness|passed out|collapsed|collapse)\\b",
+    "bleed_severe": "\\b(?:(?:severe|uncontrolled|uncontrollable|profuse|heavy|massive) bleeding|bleeding (?:heavily|profusely|uncontrollably)|bleeding (?:that |which )?(?:will not|won\\x27t|does not|doesn\\x27t) stop|(?:cannot|can\\x27t) stop (?:the )?bleeding)\\b",
+    "airway_swelling": "\\b(?:(?:swollen|swelling of (?:my |the )?) (?:tongue|throat|lips)|(?:tongue|throat|lips) (?:is |are |has |have |become |becoming |suddenly )*(?:swollen|swelling)|throat (?:feels |is )?tight)\\b",
+    "allergen": "\\b(?:allergic reaction|allergy|allergic|bee sting|wasp sting|peanuts?|new medication)\\b",
+    "poison_exposure": "\\b(?:(?:swallowed|ingested|drank|drunk) (?:some |a |the |household )*(?:bleach|drain cleaner|antifreeze|pesticide|poison|cleaning (?:fluid|product))|(?:took|taken|swallowed|ingested) (?:an? |a large |too many |too much )?(?:overdose|overdose of|handful of (?:pills|tablets))|(?:overdosed|overdosing) on \\w+)\\b",
+    "head_injury": "\\b(?:head injury|hit (?:my |his |her |the )?head|head trauma|head (?:was |is )?injured)\\b",
+    "high_speed": "\\b(?:high[- ]speed (?:crash|collision|accident)|car crash|road accident)\\b",
+    "headache": "\\bheadaches?\\b",
+    "extreme_pain": "\\b(?:extremely painful|worst (?:headache|pain)(?: of my life)?|excruciating|unbearable)\\b",
+    "abdomen": "\\b(?:(?:abdominal|stomach|belly|tummy) (?:pain|ache)|pain (?:in|on) (?:my |the |his |her )?(?:abdomen|stomach|belly|tummy))\\b",
+    "abdomen_severe": "\\b(?:(?:severe|excruciating|unbearable) (?:abdominal|stomach|belly|tummy) (?:pain|ache)|(?:abdominal|stomach|belly|tummy) pain (?:is |has become |feels )?(?:severe|unbearable|excruciating))\\b",
+    "vomit_blood": "\\b(?:vomiting blood|vomited blood|blood in (?:my |the )?vomit|vomit (?:looks like|like) (?:ground coffee|coffee grounds))\\b",
+    "imminent_harm": "\\b(?:(?:about to|going to|plan to|planning to) (?:kill myself|end my life|harm myself|hurt myself)(?: tonight| now| today)?|(?:cannot|can\\x27t) keep myself safe)\\b",
+    "confusion": "\\b(?:confused|confusion|not making sense|disoriented|disorientated)\\b",
+    "infection": "\\b(?:fever|infection|infected|shivering)\\b",
+    "disease_name": "\\b(?:heart attack|stroke|anaphylaxis|sepsis|poisoning|cancer|diabetes|epilepsy)\\b",
+    "other_symptom": "\\b(?:pain|discomfort|bleeding|numbness|weakness|dizz(?:y|iness)|palpitations|swelling|rash|cough|vomit(?:ing)?|diarrh(?:oea|ea)|seizures?|fits?|injury|burns?|wheez(?:ing|e)|fatigue|itching|headaches?|night sweats|weight loss|faint(?:ing)?|suicidal thoughts)\\b|\\b(?:aches?|itchy|discharge|urine leakage|urinary leakage|leak urine|lost (?:about |over |nearly )?(?:\\d+|ten|twenty) (?:pounds|lbs|kilograms|kg))\\b",
+    "stable": "\\b(?:asymptomatic|symptom[- ]free|no (?:new |current |acute |active |other )?symptoms|(?:feel|feeling|am|is|are) (?:completely |otherwise )?(?:well|fine)|(?:condition|symptoms|health) (?:has |have |is |are |been |remained )*stable|stable (?:condition|health))\\b",
+    "routine": "\\b(?:routine (?:check[- ]?up|appointment|follow[- ]?up|blood test|screening)|(?:medication|prescription) refill|refill (?:my |the )?prescription|general (?:diet|nutrition|exercise) advice|preventive (?:screening|check[- ]?up)|annual check[- ]?up|regular check[- ]?up)\\b",
+    "nonacute_duration": "\\b(?:for (?:the past |over |about )?(?:\\d+|several|many|two|three|six|a few) (?:months?|years?)|past (?:\\d+|several|few) (?:months?|years?)|chronic|long[- ]standing|well[- ]controlled|stable)\\b",
+    "preventive_care": "\\b(?:vaccin\\w*|immuni[sz]\\w*|screening|prevent(?:ion|ive)|annual check|routine check|healthy diet|weight management|family planning|contracepti\\w*)\\b",
+    "planned_care": "\\b(?:scheduled (?:for |to have )?\\w*|planning (?:a |to )|procedure options|medication refill|prescription refill|wisdom tooth extraction|fertility treatment|trying to conceive)\\b",
+    "chronic_care": "\\b(?:treatment options|treatment available|manage|managing|management|treatments?|medications?|therapy|therapies|lifestyle|diet|exercise|skin care|skincare|acne|osteoarthritis|PCOS|fertility)\\b",
+    "general_education": "\\b(?:how does .{0,35} work|difference between|what is the difference|mechanism of action|how do .{0,30} work)\\b",
+    "severe_headache": "\\b(?:sudden (?:severe |intense )?headache|severe headaches?|worst headache(?: of my life)?)\\b",
+    "thunderclap": "\\b(?:sudden (?:severe|intense|extremely painful) headaches?|thunderclap headache|worst headache of my life)\\b",
+    "black_stool": "\\b(?:black (?:tarry |sticky )stools?|tarry stools?)\\b",
+    "neck_stiff": "\\b(?:stiff neck|neck stiffness)\\b",
+    "seizure_prolonged": "\\b(?:seizure (?:lasting|for|lasted) (?:[6-9]|\\d{2,}) minutes|repeated seizures without (?:regaining consciousness|recovery))\\b",
+    "acute_risk": "\\b(?:blood in (?:the |my )?urine|coughing up blood|difficulty swallowing|trouble swallowing|vision loss|loss of vision|sudden hearing loss|suicidal thoughts|low blood sugar|weight loss|lost (?:about |over |nearly )?(?:\\d+|ten|twenty) (?:pounds|lbs|kilograms|kg)|spreading rash|losing control|blurred vision|blurred eyesight|palpitations)\\b"
+  },
+  "rules": [
+    {
+      "id": "RF_BREATH_01",
+      "category": "Severe breathing compromise",
+      "all_of": [
+        [
+          "breath_severe"
+        ]
+      ],
+      "sources": [
+        "breathing"
+      ]
+    },
+    {
+      "id": "RF_BREATH_02",
+      "category": "Severe breathing compromise",
+      "all_of": [
+        [
+          "cyanosis"
+        ]
+      ],
+      "sources": [
+        "breathing"
+      ]
+    },
+    {
+      "id": "RF_STROKE_01",
+      "category": "Neurological emergency",
+      "all_of": [
+        [
+          "face_droop",
+          "speech",
+          "one_side"
+        ]
+      ],
+      "sources": [
+        "stroke"
+      ],
+      "require_acute": true,
+      "allow_recent_resolved": true
+    },
+    {
+      "id": "RF_CARDIAC_01",
+      "category": "Acute cardiovascular warning signs",
+      "all_of": [
+        [
+          "chest"
+        ],
+        [
+          "breath",
+          "sweat",
+          "nausea",
+          "lightheaded",
+          "radiation"
+        ]
+      ],
+      "sources": [
+        "chest"
+      ]
+    },
+    {
+      "id": "RF_CARDIAC_02",
+      "category": "Acute cardiovascular warning signs",
+      "all_of": [
+        [
+          "chest"
+        ],
+        [
+          "persistent"
+        ]
+      ],
+      "sources": [
+        "chest"
+      ],
+      "require_acute": true
+    },
+    {
+      "id": "RF_BLEED_01",
+      "category": "Severe bleeding",
+      "all_of": [
+        [
+          "bleed_severe"
+        ]
+      ],
+      "sources": [
+        "bleeding"
+      ]
+    },
+    {
+      "id": "RF_LOC_01",
+      "category": "Impaired consciousness",
+      "all_of": [
+        [
+          "unresponsive"
+        ]
+      ],
+      "sources": [
+        "unresponsive"
+      ]
+    },
+    {
+      "id": "RF_ALLERGY_01",
+      "category": "Possible severe allergic reaction",
+      "all_of": [
+        [
+          "airway_swelling"
+        ]
+      ],
+      "sources": [
+        "allergy"
+      ]
+    },
+    {
+      "id": "RF_ALLERGY_02",
+      "category": "Possible severe allergic reaction",
+      "all_of": [
+        [
+          "airway_swelling"
+        ],
+        [
+          "allergen",
+          "breath"
+        ]
+      ],
+      "sources": [
+        "allergy"
+      ]
+    },
+    {
+      "id": "RF_POISON_01",
+      "category": "Potential serious poisoning",
+      "all_of": [
+        [
+          "poison_exposure"
+        ]
+      ],
+      "sources": [
+        "poison"
+      ]
+    },
+    {
+      "id": "RF_TRAUMA_01",
+      "category": "Serious head trauma",
+      "all_of": [
+        [
+          "head_injury"
+        ],
+        [
+          "unresponsive",
+          "one_side",
+          "speech",
+          "high_speed"
+        ]
+      ],
+      "sources": [
+        "head"
+      ]
+    },
+    {
+      "id": "RF_HEADACHE_01",
+      "category": "Sudden extreme headache",
+      "all_of": [
+        [
+          "headache"
+        ],
+        [
+          "extreme_pain"
+        ]
+      ],
+      "sources": [
+        "headache"
+      ],
+      "require_acute": true
+    },
+    {
+      "id": "RF_ABDOMEN_01",
+      "category": "Severe abdominal presentation",
+      "all_of": [
+        [
+          "abdomen_severe"
+        ]
+      ],
+      "sources": [
+        "abdomen"
+      ]
+    },
+    {
+      "id": "RF_ABDOMEN_02",
+      "category": "Severe abdominal presentation",
+      "all_of": [
+        [
+          "vomit_blood"
+        ]
+      ],
+      "sources": [
+        "abdomen"
+      ]
+    },
+    {
+      "id": "RF_SELF_HARM_01",
+      "category": "Imminent self-harm",
+      "all_of": [
+        [
+          "imminent_harm"
+        ]
+      ],
+      "sources": [
+        "self_harm"
+      ]
+    },
+    {
+      "id": "RF_INFECTION_01",
+      "category": "Acute confusion with infection indicators",
+      "all_of": [
+        [
+          "confusion"
+        ],
+        [
+          "infection"
+        ]
+      ],
+      "sources": [
+        "sepsis"
+      ]
+    },
+    {
+      "id": "RF_GI_BLEED_02",
+      "category": "RF_GI_BLEED_02",
+      "all_of": [
+        [
+          "black_stool"
+        ]
+      ],
+      "sources": [
+        "abdominal"
+      ]
+    },
+    {
+      "id": "RF_SEIZURE_01",
+      "category": "RF_SEIZURE_01",
+      "all_of": [
+        [
+          "seizure_prolonged"
+        ]
+      ],
+      "sources": [
+        "seizure"
+      ]
+    },
+    {
+      "id": "RF_HEADACHE_NEURO_02",
+      "category": "RF_HEADACHE_NEURO_02",
+      "all_of": [
+        [
+          "severe_headache"
+        ],
+        [
+          "confusion"
+        ]
+      ],
+      "sources": [
+        "headache"
+      ]
+    },
+    {
+      "id": "RF_HEADACHE_MENINGEAL_03",
+      "category": "RF_HEADACHE_MENINGEAL_03",
+      "all_of": [
+        [
+          "headache"
+        ],
+        [
+          "neck_stiff"
+        ]
+      ],
+      "sources": [
+        "headache"
+      ]
+    },
+    {
+      "id": "RF_HEADACHE_SUDDEN_04",
+      "category": "Sudden extreme headache",
+      "all_of": [
+        [
+          "thunderclap"
+        ]
+      ],
+      "sources": [
+        "headache"
+      ]
+    }
+  ],
+  "sources": {
+    "breathing": {
+      "title": "NHS: shortness of breath",
+      "url": "https://www.nhs.uk/symptoms/shortness-of-breath/",
+      "basis": "Severe breathing impairment and blue/grey lips warrant immediate assessment.",
+      "accessed": "2026-10-08"
+    },
+    "stroke": {
+      "title": "NHS: stroke symptoms",
+      "url": "https://www.nhs.uk/conditions/stroke/symptoms/",
+      "basis": "FAST signs; signs within the last 24 hours remain emergency indicators even if resolved.",
+      "accessed": "2026-10-08"
+    },
+    "chest": {
+      "title": "NHS: chest pain",
+      "url": "https://www.nhs.uk/symptoms/chest-pain/",
+      "basis": "Chest pain with breathlessness, sweating, nausea/lightheadedness or spreading pain; sudden persistent pain.",
+      "accessed": "2026-10-08"
+    },
+    "allergy": {
+      "title": "NHS: anaphylaxis",
+      "url": "https://www.nhs.uk/conditions/anaphylaxis/",
+      "basis": "Sudden airway swelling, tight throat and breathing compromise are warning signs.",
+      "accessed": "2026-10-08"
+    },
+    "bleeding": {
+      "title": "St John Ambulance: severe bleeding",
+      "url": "https://www.sja.org.uk/first-aid-advice/severe-bleeding/",
+      "basis": "Severe bleeding needs emergency assistance; uncontrolled bleeding is time critical.",
+      "accessed": "2026-10-08"
+    },
+    "unresponsive": {
+      "title": "NHS: fainting",
+      "url": "https://www.nhs.uk/symptoms/fainting/",
+      "basis": "Impaired recovery, inability to wake or absent breathing are emergency concerns. The rule uses explicit current impaired consciousness, not a past recovered faint.",
+      "accessed": "2026-10-08"
+    },
+    "poison": {
+      "title": "NHS: poisoning",
+      "url": "https://www.nhs.uk/conditions/poisoning/",
+      "basis": "Actual suspected harmful exposure requires immediate evaluation; uncertainty about harmfulness needs advice.",
+      "accessed": "2026-10-08"
+    },
+    "head": {
+      "title": "NHS: head injury",
+      "url": "https://www.nhs.uk/conditions/head-injury-and-concussion/",
+      "basis": "Head injury with impaired consciousness, new neurological symptoms or high-speed mechanism.",
+      "accessed": "2026-10-08"
+    },
+    "headache": {
+      "title": "NHS: headaches",
+      "url": "https://www.nhs.uk/symptoms/headaches/",
+      "basis": "Sudden extremely painful headache is an emergency indicator.",
+      "accessed": "2026-10-08"
+    },
+    "abdomen": {
+      "title": "NHS: stomach ache",
+      "url": "https://www.nhs.uk/symptoms/stomach-ache/",
+      "basis": "Severe or very sudden abdominal pain and vomiting blood warrant immediate evaluation.",
+      "accessed": "2026-10-08"
+    },
+    "self_harm": {
+      "title": "NHS: suicidal thoughts",
+      "url": "https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/behaviours/help-for-suicidal-thoughts/",
+      "basis": "Imminent self-harm or serious self-harm including overdose requires emergency help.",
+      "accessed": "2026-10-08"
+    },
+    "sepsis": {
+      "title": "NHS: sepsis",
+      "url": "https://www.nhs.uk/conditions/sepsis/",
+      "basis": "Acute confusion and breathing/skin changes in illness can be time-critical; this implementation covers a narrow subset.",
+      "accessed": "2026-10-08"
+    }
+  },
+  "negative_rule": {
+    "id": "NE_ROUTINE_01",
+    "requires": [
+      "stable",
+      "routine"
+    ],
+    "rationale": "Explicit symptom-free/stable description plus routine purpose, with no active recognized symptom or unresolved red-flag mention. This is a conservative engineering annotation policy, not a guideline declaration of safety."
+  },
+  "negative_veto_concepts": [
+    "breath",
+    "breath_severe",
+    "cyanosis",
+    "chest",
+    "face_droop",
+    "speech",
+    "one_side",
+    "unresponsive",
+    "faint",
+    "bleed_severe",
+    "airway_swelling",
+    "poison_exposure",
+    "head_injury",
+    "abdomen_severe",
+    "vomit_blood",
+    "imminent_harm",
+    "confusion",
+    "black_stool",
+    "severe_headache",
+    "seizure_prolonged",
+    "acute_risk"
+  ],
+  "additional_sources": {
+    "abdominal": "https://www.nhs.uk/symptoms/stomach-ache/",
+    "seizure": "https://www.nhs.uk/conditions/epilepsy/",
+    "acne": "https://www.nhs.uk/conditions/acne/",
+    "osteoarthritis": "https://www.nhs.uk/conditions/osteoarthritis/",
+    "preventive": "https://www.nhs.uk/live-well/",
+    "sepsis": "https://www.nhs.uk/conditions/sepsis/",
+    "panic": "https://www.nhs.uk/mental-health/conditions/panic-disorder/",
+    "dental": "https://www.nhs.uk/conditions/dental-abscess/"
+  },
+  "negative_policy": "Care-purpose patterns and symptom-local duration are engineering weak-supervision criteria, not guideline claims of safety. Acute or high-risk evidence vetoes zero.",
+  "v3_policy": "Ongoing infection plus actual confusion warrants emergency review without a magic onset phrase. Known recurrent panic symptoms are episodic unless explicitly happening now. Supplemental non-immediate care patterns always receive borderline review."
+}

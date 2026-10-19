@@ -1,0 +1,151 @@
+{
+  "selected_model": "vote_catboost_hist_gradient_boosting_extra_trees_1_1_1",
+  "threshold": 0.48000000000000004,
+  "validation": {
+    "model": "vote_catboost_hist_gradient_boosting_extra_trees_1_1_1",
+    "cv_average_precision": null,
+    "cv_std": null,
+    "trials": 0,
+    "threshold": 0.48000000000000004,
+    "macro_f1": 0.9537621893973871,
+    "emergency_recall": 0.9633204633204633,
+    "emergency_precision": 0.8934646374216652
+  },
+  "test": {
+    "classification_report": {
+      "non_emergency": {
+        "precision": 0.9906329113924051,
+        "recall": 0.9649815043156597,
+        "f1-score": 0.9776389756402248,
+        "support": 4055.0
+      },
+      "emergency": {
+        "precision": 0.8756567425569177,
+        "recall": 0.9643201542912246,
+        "f1-score": 0.9178522257916475,
+        "support": 1037.0
+      },
+      "accuracy": 0.9648468185388845,
+      "macro avg": {
+        "precision": 0.9331448269746614,
+        "recall": 0.9646508293034421,
+        "f1-score": 0.9477456007159362,
+        "support": 5092.0
+      },
+      "weighted avg": {
+        "precision": 0.9672176939763798,
+        "recall": 0.9648468185388845,
+        "f1-score": 0.9654632373069619,
+        "support": 5092.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        3913,
+        142
+      ],
+      [
+        37,
+        1000
+      ]
+    ],
+    "roc_auc": 0.9906793879242384,
+    "average_precision": 0.9684691832478014
+  },
+  "search_trials": 157,
+  "completed_trials": 108,
+  "failed_trials": 1,
+  "model_families": [
+    "logistic_regression",
+    "sgd",
+    "random_forest",
+    "extra_trees",
+    "hist_gradient_boosting",
+    "xgboost",
+    "lightgbm",
+    "catboost"
+  ],
+  "refined_families": [
+    "hist_gradient_boosting",
+    "catboost",
+    "extra_trees"
+  ],
+  "best_parameters": {
+    "logistic_regression": {
+      "weight": "none",
+      "C": 1.3039774937773738,
+      "penalty": "l1"
+    },
+    "sgd": {
+      "weight": "none",
+      "alpha": 5.653134713470281e-05,
+      "l1_ratio": 0.7048374739989535
+    },
+    "random_forest": {
+      "weight": "none",
+      "n_estimators": 350,
+      "max_depth": 40,
+      "min_samples_leaf": 1,
+      "min_samples_split": 11,
+      "max_features": 1.0
+    },
+    "extra_trees": {
+      "weight": "none",
+      "n_estimators": 450,
+      "max_depth": 40,
+      "min_samples_leaf": 1,
+      "min_samples_split": 12,
+      "max_features": 0.25
+    },
+    "hist_gradient_boosting": {
+      "weight": "none",
+      "max_iter": 550,
+      "learning_rate": 0.025213297513562046,
+      "max_leaf_nodes": 63,
+      "min_samples_leaf": 10,
+      "l2_regularization": 1.4324588515722552
+    },
+    "xgboost": {
+      "weight": "sqrt",
+      "n_estimators": 300,
+      "learning_rate": 0.08339542248957853,
+      "subsample": 0.9735380090951029,
+      "colsample_bytree": 0.7519716948413848,
+      "reg_alpha": 0.00011842087601414682,
+      "reg_lambda": 0.10455103686275444,
+      "max_depth": 6,
+      "min_child_weight": 2.5318888231286683
+    },
+    "lightgbm": {
+      "weight": "balanced",
+      "n_estimators": 200,
+      "learning_rate": 0.08107654385902731,
+      "subsample": 0.8047121544930498,
+      "colsample_bytree": 0.998077024385053,
+      "reg_alpha": 0.0001150627413848855,
+      "reg_lambda": 25.14806422923282,
+      "num_leaves": 61,
+      "max_depth": -1,
+      "min_child_samples": 10
+    },
+    "catboost": {
+      "weight": "none",
+      "iterations": 500,
+      "depth": 7,
+      "learning_rate": 0.19810720542584,
+      "l2_leaf_reg": 8.296846595589463,
+      "random_strength": 0.6576833758619088
+    }
+  },
+  "seed": 20261009,
+  "split_counts": {
+    "train": 23758,
+    "validation": 5091,
+    "test": 5092
+  },
+  "source_sha256": "85e40ee05e7241ae263ab20a9f3362ea6be9f89c86206fce13e86d0169c68520",
+  "nlp_signature": "7d6e1cb4d9d06b74abeec179ba905115f389bb3d0bbd5f42eec731340f85d5f8",
+  "runtime_seconds": 4994.161827500007,
+  "evaluation_reference": "Current rule/policy annotations; not independently verified clinical ground truth.",
+  "holdout_note": "New split for this tuning experiment. The dataset was used in earlier experiments; this is not an external or previously unseen clinical cohort."
+}

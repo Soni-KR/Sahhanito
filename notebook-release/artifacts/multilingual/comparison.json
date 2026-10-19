@@ -1,0 +1,700 @@
+{
+  "reference_provenance": "assistant-authored synthetic development challenge; native speaker/clinician review pending",
+  "scope": "single primary concept retrieval (not full NER, assertion, span or clinical validation)",
+  "records": 54,
+  "approaches": {
+    "existing_english": {
+      "exact_concept_set_matches": 15,
+      "exact_concept_set_rate": 0.2777777777777778,
+      "mean_extraction_ms": 0.1827462973004138,
+      "runtime_model_download_mb": 0,
+      "by_partition": {
+        "development": {
+          "correct": 14,
+          "records": 44,
+          "rate": 0.3181818181818182
+        },
+        "additional_stress": {
+          "correct": 1,
+          "records": 10,
+          "rate": 0.1
+        }
+      }
+    },
+    "aligned_clinical_phrases": {
+      "exact_concept_set_matches": 47,
+      "exact_concept_set_rate": 0.8703703703703703,
+      "mean_extraction_ms": 0.35084629511132975,
+      "runtime_model_download_mb": 0,
+      "by_partition": {
+        "development": {
+          "correct": 44,
+          "records": 44,
+          "rate": 1.0
+        },
+        "additional_stress": {
+          "correct": 3,
+          "records": 10,
+          "rate": 0.3
+        }
+      }
+    },
+    "multilingual_encoder": {
+      "model_id": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+      "cutoff": 0.45,
+      "exact_concept_set_matches": 27,
+      "exact_concept_set_rate": 0.5,
+      "mean_extraction_ms": 2.282668519506438,
+      "load_seconds_including_download": 0.7152127999870572,
+      "runtime": "publisher ONNX quint8 avx2 export + tokenizers, CPU, 2 threads",
+      "research_cache_mb": 127.535388,
+      "limitation": "Whole-sentence nearest-concept retrieval does not locate evidence spans or distinguish assertion/actor/time. Not a fine-tuned clinical NER model.",
+      "by_partition": {
+        "development": {
+          "correct": 23,
+          "records": 44,
+          "rate": 0.5227272727272727
+        },
+        "additional_stress": {
+          "correct": 4,
+          "records": 10,
+          "rate": 0.4
+        }
+      }
+    }
+  },
+  "rows": [
+    {
+      "text": "I have chest pain",
+      "gold": "chest",
+      "partition": "development",
+      "existing_english": [
+        "chest"
+      ],
+      "aligned_clinical_phrases": [
+        "chest"
+      ],
+      "multilingual_encoder": [
+        "chest"
+      ],
+      "encoder_similarity": 0.7574325473552234
+    },
+    {
+      "text": "3andi wja3 fi sadri",
+      "gold": "chest",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "chest"
+      ],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.21910393714161952
+    },
+    {
+      "text": "صدري يوجعني",
+      "gold": "chest",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "chest"
+      ],
+      "multilingual_encoder": [
+        "chest"
+      ],
+      "encoder_similarity": 0.4922911107919953
+    },
+    {
+      "text": "3andi douleur fi sadri",
+      "gold": "chest",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "chest"
+      ],
+      "multilingual_encoder": [
+        "chest"
+      ],
+      "encoder_similarity": 0.5842642708941356
+    },
+    {
+      "text": "ma3andich wja3 fi sadri",
+      "gold": "chest",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "chest"
+      ],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.1504584327260214
+    },
+    {
+      "text": "ماعنديش وجيعة في صدري",
+      "gold": "chest",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "chest"
+      ],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.36606368966116587
+    },
+    {
+      "text": "j’ai une douleur thoracique",
+      "gold": "chest",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "chest"
+      ],
+      "multilingual_encoder": [
+        "headache"
+      ],
+      "encoder_similarity": 0.5862240674479731
+    },
+    {
+      "text": "3andi wji3a fi sadri",
+      "gold": "chest",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "chest"
+      ],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.21565017771324804
+    },
+    {
+      "text": "عندي وجع في صدري",
+      "gold": "chest",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "chest"
+      ],
+      "multilingual_encoder": [
+        "chest"
+      ],
+      "encoder_similarity": 0.5332396127225828
+    },
+    {
+      "text": "I have difficulty breathing",
+      "gold": "breath",
+      "partition": "development",
+      "existing_english": [
+        "breath"
+      ],
+      "aligned_clinical_phrases": [
+        "breath"
+      ],
+      "multilingual_encoder": [
+        "breath"
+      ],
+      "encoder_similarity": 0.7982546318567498
+    },
+    {
+      "text": "ma najamch netnaffes",
+      "gold": "breath",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "breath"
+      ],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.2824723290814812
+    },
+    {
+      "text": "ما نجمش نتنفس",
+      "gold": "breath",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "breath"
+      ],
+      "multilingual_encoder": [
+        "cough"
+      ],
+      "encoder_similarity": 0.6080950001090238
+    },
+    {
+      "text": "3andi s3ouba fel tanaffos",
+      "gold": "breath",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "breath"
+      ],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.22757797101375465
+    },
+    {
+      "text": "نفسي مقطوع",
+      "gold": "breath",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "breath"
+      ],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.42041873009371156
+    },
+    {
+      "text": "j’ai une difficulté à respirer",
+      "gold": "breath",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "breath"
+      ],
+      "multilingual_encoder": [
+        "breath"
+      ],
+      "encoder_similarity": 0.7600836189646395
+    },
+    {
+      "text": "I am short of breath",
+      "gold": "breath",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "breath"
+      ],
+      "multilingual_encoder": [
+        "breath"
+      ],
+      "encoder_similarity": 0.8142454242597421
+    },
+    {
+      "text": "3andi sou3ouba fel tanaffos",
+      "gold": "breath",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "breath"
+      ],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.2159653951368528
+    },
+    {
+      "text": "I have a headache",
+      "gold": "headache",
+      "partition": "development",
+      "existing_english": [
+        "headache"
+      ],
+      "aligned_clinical_phrases": [
+        "headache"
+      ],
+      "multilingual_encoder": [
+        "headache"
+      ],
+      "encoder_similarity": 0.8616422072365805
+    },
+    {
+      "text": "rasi youja3ni barcha",
+      "gold": "headache",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "headache"
+      ],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.27046908545816806
+    },
+    {
+      "text": "راسي يوجعني برشة",
+      "gold": "headache",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "headache"
+      ],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.21916714508998006
+    },
+    {
+      "text": "3andi mal à la tête",
+      "gold": "headache",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "headache"
+      ],
+      "multilingual_encoder": [
+        "headache"
+      ],
+      "encoder_similarity": 0.885711672598425
+    },
+    {
+      "text": "wja3 fi rasi",
+      "gold": "headache",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "headache"
+      ],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.14556516095519875
+    },
+    {
+      "text": "راسي يوجعني",
+      "gold": "headache",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "headache"
+      ],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.19660113913941485
+    },
+    {
+      "text": "I have no headache",
+      "gold": "headache",
+      "partition": "development",
+      "existing_english": [
+        "headache"
+      ],
+      "aligned_clinical_phrases": [
+        "headache"
+      ],
+      "multilingual_encoder": [
+        "headache"
+      ],
+      "encoder_similarity": 0.646889238735467
+    },
+    {
+      "text": "I am dizzy",
+      "gold": "dizziness",
+      "partition": "development",
+      "existing_english": [
+        "dizziness"
+      ],
+      "aligned_clinical_phrases": [
+        "dizziness"
+      ],
+      "multilingual_encoder": [
+        "dizziness"
+      ],
+      "encoder_similarity": 0.771437402694119
+    },
+    {
+      "text": "3andi doukha",
+      "gold": "dizziness",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "dizziness"
+      ],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.28426210219471715
+    },
+    {
+      "text": "عندي دوخة",
+      "gold": "dizziness",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "dizziness"
+      ],
+      "multilingual_encoder": [
+        "cough"
+      ],
+      "encoder_similarity": 0.4508983339813979
+    },
+    {
+      "text": "taw 3andi doukha",
+      "gold": "dizziness",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "dizziness"
+      ],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.2056115463495295
+    },
+    {
+      "text": "j’ai des étourdissements",
+      "gold": "dizziness",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "dizziness"
+      ],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.43674982182996236
+    },
+    {
+      "text": "I have a fever",
+      "gold": "fever",
+      "partition": "development",
+      "existing_english": [
+        "fever"
+      ],
+      "aligned_clinical_phrases": [
+        "fever"
+      ],
+      "multilingual_encoder": [
+        "fever"
+      ],
+      "encoder_similarity": 0.7988718348535848
+    },
+    {
+      "text": "3andi s5ana",
+      "gold": "fever",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "fever"
+      ],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.20990185888962232
+    },
+    {
+      "text": "عندي سخانة",
+      "gold": "fever",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "fever"
+      ],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.33610661700179933
+    },
+    {
+      "text": "3andi fièvre",
+      "gold": "fever",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "fever"
+      ],
+      "multilingual_encoder": [
+        "fever"
+      ],
+      "encoder_similarity": 0.6804091542185491
+    },
+    {
+      "text": "I have no fever",
+      "gold": "fever",
+      "partition": "development",
+      "existing_english": [
+        "fever"
+      ],
+      "aligned_clinical_phrases": [
+        "fever"
+      ],
+      "multilingual_encoder": [
+        "fever"
+      ],
+      "encoder_similarity": 0.6312887286514048
+    },
+    {
+      "text": "I have diabetes",
+      "gold": "diabetes",
+      "partition": "development",
+      "existing_english": [
+        "diabetes"
+      ],
+      "aligned_clinical_phrases": [
+        "diabetes"
+      ],
+      "multilingual_encoder": [
+        "diabetes"
+      ],
+      "encoder_similarity": 0.7386203235114366
+    },
+    {
+      "text": "3andi sokkor",
+      "gold": "diabetes",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "diabetes"
+      ],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.3467347283957424
+    },
+    {
+      "text": "عندي سكري",
+      "gold": "diabetes",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "diabetes"
+      ],
+      "multilingual_encoder": [
+        "diabetes"
+      ],
+      "encoder_similarity": 0.5968941892597726
+    },
+    {
+      "text": "j’ai un diabète",
+      "gold": "diabetes",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "diabetes"
+      ],
+      "multilingual_encoder": [
+        "diabetes"
+      ],
+      "encoder_similarity": 0.7590702847074264
+    },
+    {
+      "text": "I need a routine prescription refill",
+      "gold": "none",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.1839777967759592
+    },
+    {
+      "text": "Ey",
+      "gold": "none",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.30323809440666394
+    },
+    {
+      "text": "Ma na3rafch",
+      "gold": "none",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.20635537355760505
+    },
+    {
+      "text": "bonjour",
+      "gold": "none",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.34479224004938513
+    },
+    {
+      "text": "3andi 7aja ghriba",
+      "gold": "none",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.3104466770917068
+    },
+    {
+      "text": "Can you explain healthy eating?",
+      "gold": "none",
+      "partition": "development",
+      "existing_english": [],
+      "aligned_clinical_phrases": [],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.2568117729856191
+    },
+    {
+      "text": "n7ess b wej3a fi sedri",
+      "gold": "chest",
+      "partition": "additional_stress",
+      "existing_english": [],
+      "aligned_clinical_phrases": [],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.15317106199574773
+    },
+    {
+      "text": "n7ess b dhaght fi sedri",
+      "gold": "chest",
+      "partition": "additional_stress",
+      "existing_english": [],
+      "aligned_clinical_phrases": [],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.23558434441342935
+    },
+    {
+      "text": "je me sens oppressé dans la poitrine",
+      "gold": "chest",
+      "partition": "additional_stress",
+      "existing_english": [],
+      "aligned_clinical_phrases": [],
+      "multilingual_encoder": [
+        "chest"
+      ],
+      "encoder_similarity": 0.5104563924195535
+    },
+    {
+      "text": "نفسي موش لاقيه",
+      "gold": "breath",
+      "partition": "additional_stress",
+      "existing_english": [],
+      "aligned_clinical_phrases": [],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.33886658607284
+    },
+    {
+      "text": "3andi nafas 9sir",
+      "gold": "breath",
+      "partition": "additional_stress",
+      "existing_english": [],
+      "aligned_clinical_phrases": [],
+      "multilingual_encoder": [
+        "breath"
+      ],
+      "encoder_similarity": 0.5561652556991791
+    },
+    {
+      "text": "انا لا استطيع التنفس",
+      "gold": "breath",
+      "partition": "additional_stress",
+      "existing_english": [],
+      "aligned_clinical_phrases": [],
+      "multilingual_encoder": [
+        "breath"
+      ],
+      "encoder_similarity": 0.719976040368476
+    },
+    {
+      "text": "rassi youja3ni barcha",
+      "gold": "headache",
+      "partition": "additional_stress",
+      "existing_english": [],
+      "aligned_clinical_phrases": [],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.2667562260131608
+    },
+    {
+      "text": "دوخة شديدة",
+      "gold": "dizziness",
+      "partition": "additional_stress",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "dizziness"
+      ],
+      "multilingual_encoder": [
+        "cough"
+      ],
+      "encoder_similarity": 0.4928168580299176
+    },
+    {
+      "text": "3andi sokor",
+      "gold": "diabetes",
+      "partition": "additional_stress",
+      "existing_english": [],
+      "aligned_clinical_phrases": [
+        "diabetes"
+      ],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.3320524148570119
+    },
+    {
+      "text": "n7eb na3ref kifech nakel s7i7",
+      "gold": "none",
+      "partition": "additional_stress",
+      "existing_english": [],
+      "aligned_clinical_phrases": [],
+      "multilingual_encoder": [],
+      "encoder_similarity": 0.0979622972171206
+    }
+  ],
+  "stress_caveat": "Additional synthetic spelling/idiom stress added after initial implementation; not used to expand the vocabulary or tune the encoder. Still assistant-authored, not independent native-speaker data."
+}

@@ -1,0 +1,18 @@
+{
+  "execution_date": "2026-10-19",
+  "python": "3.12",
+  "model_training": false,
+  "network_downloads": false,
+  "notebooks": {
+    "01_nlp_extractor_trials.ipynb": {
+      "executed_code_cells": 8,
+      "error_outputs": 0,
+      "sha256": "0625dd4a63bc881d57378068b3710a5627c974fe4908ebd91193dad8b2da8c4e"
+    },
+    "02_final_ml_model.ipynb": {
+      "executed_code_cells": 9,
+      "error_outputs": 0,
+      "sha256": "edb9aa016e1c5280524292e4e88c71223796a443153c2731e53a92f72a8f7640"
+    }
+  }
+}

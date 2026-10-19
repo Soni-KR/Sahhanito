@@ -1,0 +1,610 @@
+[
+  {
+    "model": "tunis-ai/TunBERT",
+    "revision": "91c6ed800acf2521ffbe311f6f0180ab528c9a94",
+    "license": "mit",
+    "tokenizer_file_sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+    "samples": [
+      {
+        "text": "3andi wja3 fi sadri",
+        "tokens": [
+          "3a",
+          "##ndi",
+          "w",
+          "##ja",
+          "##3",
+          "fi",
+          "sad",
+          "##ri"
+        ],
+        "subwords_per_space_word": 2.0,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "صدري يوجعني",
+        "tokens": [
+          "ص",
+          "##د",
+          "##ر",
+          "##ي",
+          "ي",
+          "##و",
+          "##ج",
+          "##ع",
+          "##ن",
+          "##ي"
+        ],
+        "subwords_per_space_word": 5.0,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "rasi youja3ni barcha",
+        "tokens": [
+          "ras",
+          "##i",
+          "you",
+          "##ja",
+          "##3",
+          "##ni",
+          "bar",
+          "##cha"
+        ],
+        "subwords_per_space_word": 2.6666666666666665,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "ma najamch netnaffes",
+        "tokens": [
+          "ma",
+          "na",
+          "##ja",
+          "##mc",
+          "##h",
+          "net",
+          "##na",
+          "##ffe",
+          "##s"
+        ],
+        "subwords_per_space_word": 3.0,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "3andi sokkor ama taw 3andi doukha",
+        "tokens": [
+          "3a",
+          "##ndi",
+          "so",
+          "##kko",
+          "##r",
+          "ama",
+          "ta",
+          "##w",
+          "3a",
+          "##ndi",
+          "do",
+          "##uk",
+          "##ha"
+        ],
+        "subwords_per_space_word": 2.1666666666666665,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "3andi douleur fi sadri",
+        "tokens": [
+          "3a",
+          "##ndi",
+          "do",
+          "##ule",
+          "##ur",
+          "fi",
+          "sad",
+          "##ri"
+        ],
+        "subwords_per_space_word": 2.0,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "3andi 7aja ghriba fi batni",
+        "tokens": [
+          "3a",
+          "##ndi",
+          "7",
+          "##aja",
+          "g",
+          "##hri",
+          "##ba",
+          "fi",
+          "bat",
+          "##ni"
+        ],
+        "subwords_per_space_word": 2.0,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "9albi yodhrob bel zerba",
+        "tokens": [
+          "9",
+          "##al",
+          "##bi",
+          "yo",
+          "##dh",
+          "##ro",
+          "##b",
+          "bel",
+          "ze",
+          "##rba"
+        ],
+        "subwords_per_space_word": 2.5,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "I've had chest pain for twenty minutes",
+        "tokens": [
+          "i",
+          "'",
+          "ve",
+          "had",
+          "chest",
+          "pain",
+          "for",
+          "twenty",
+          "minutes"
+        ],
+        "subwords_per_space_word": 1.2857142857142858,
+        "unknown_tokens": 0
+      }
+    ]
+  },
+  {
+    "model": "FacebookAI/xlm-roberta-base",
+    "revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
+    "license": "mit",
+    "tokenizer_file_sha256": "a898ea75433890f6610f4e470b8ebeb0c21dce5c8dd61f892eb09eb5919d2e2c",
+    "samples": [
+      {
+        "text": "3andi wja3 fi sadri",
+        "tokens": [
+          "▁3",
+          "andi",
+          "▁w",
+          "ja",
+          "3",
+          "▁fi",
+          "▁sa",
+          "dri"
+        ],
+        "subwords_per_space_word": 2.0,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "صدري يوجعني",
+        "tokens": [
+          "▁صدر",
+          "ي",
+          "▁يو",
+          "ج",
+          "عني"
+        ],
+        "subwords_per_space_word": 2.5,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "rasi youja3ni barcha",
+        "tokens": [
+          "▁rasi",
+          "▁you",
+          "ja",
+          "3",
+          "ni",
+          "▁barcha"
+        ],
+        "subwords_per_space_word": 2.0,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "ma najamch netnaffes",
+        "tokens": [
+          "▁ma",
+          "▁na",
+          "jam",
+          "ch",
+          "▁net",
+          "na",
+          "ffe",
+          "s"
+        ],
+        "subwords_per_space_word": 2.6666666666666665,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "3andi sokkor ama taw 3andi doukha",
+        "tokens": [
+          "▁3",
+          "andi",
+          "▁sok",
+          "kor",
+          "▁ama",
+          "▁ta",
+          "w",
+          "▁3",
+          "andi",
+          "▁do",
+          "u",
+          "kha"
+        ],
+        "subwords_per_space_word": 2.0,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "3andi douleur fi sadri",
+        "tokens": [
+          "▁3",
+          "andi",
+          "▁douleur",
+          "▁fi",
+          "▁sa",
+          "dri"
+        ],
+        "subwords_per_space_word": 1.5,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "3andi 7aja ghriba fi batni",
+        "tokens": [
+          "▁3",
+          "andi",
+          "▁7",
+          "aja",
+          "▁gh",
+          "riba",
+          "▁fi",
+          "▁bat",
+          "ni"
+        ],
+        "subwords_per_space_word": 1.8,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "9albi yodhrob bel zerba",
+        "tokens": [
+          "▁9",
+          "al",
+          "bi",
+          "▁y",
+          "odh",
+          "rob",
+          "▁bel",
+          "▁zer",
+          "ba"
+        ],
+        "subwords_per_space_word": 2.25,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "I've had chest pain for twenty minutes",
+        "tokens": [
+          "▁I",
+          "'",
+          "ve",
+          "▁had",
+          "▁che",
+          "st",
+          "▁pain",
+          "▁for",
+          "▁twenty",
+          "▁minutes"
+        ],
+        "subwords_per_space_word": 1.4285714285714286,
+        "unknown_tokens": 0
+      }
+    ]
+  },
+  {
+    "model": "Vionex-digital/vioBERT-v3",
+    "revision": "385c4a740e97e1198f9f3349c770ca31afc9381f",
+    "license": "apache-2.0",
+    "tokenizer_file_sha256": "8db774642ccf7eb2961ad7a14548cb35c58e1bb9e46bd7a581330e2b4250186d",
+    "samples": [
+      {
+        "text": "3andi wja3 fi sadri",
+        "tokens": [
+          "3",
+          "##and",
+          "##i",
+          "w",
+          "##ja",
+          "##3",
+          "fi",
+          "sad",
+          "##ri"
+        ],
+        "subwords_per_space_word": 2.25,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "صدري يوجعني",
+        "tokens": [
+          "صدري",
+          "يوجعني"
+        ],
+        "subwords_per_space_word": 1.0,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "rasi youja3ni barcha",
+        "tokens": [
+          "ras",
+          "##i",
+          "you",
+          "##ja",
+          "##3",
+          "##ni",
+          "bar",
+          "##ch",
+          "##a"
+        ],
+        "subwords_per_space_word": 3.0,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "ma najamch netnaffes",
+        "tokens": [
+          "ma",
+          "naj",
+          "##am",
+          "##ch",
+          "net",
+          "##na",
+          "##ff",
+          "##es"
+        ],
+        "subwords_per_space_word": 2.6666666666666665,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "3andi sokkor ama taw 3andi doukha",
+        "tokens": [
+          "3",
+          "##and",
+          "##i",
+          "so",
+          "##kk",
+          "##or",
+          "am",
+          "##a",
+          "ta",
+          "##w",
+          "3",
+          "##and",
+          "##i",
+          "do",
+          "##uk",
+          "##ha"
+        ],
+        "subwords_per_space_word": 2.6666666666666665,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "3andi douleur fi sadri",
+        "tokens": [
+          "3",
+          "##and",
+          "##i",
+          "do",
+          "##ul",
+          "##e",
+          "##ur",
+          "fi",
+          "sad",
+          "##ri"
+        ],
+        "subwords_per_space_word": 2.5,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "3andi 7aja ghriba fi batni",
+        "tokens": [
+          "3",
+          "##and",
+          "##i",
+          "7",
+          "##aj",
+          "##a",
+          "gh",
+          "##rib",
+          "##a",
+          "fi",
+          "bat",
+          "##ni"
+        ],
+        "subwords_per_space_word": 2.4,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "9albi yodhrob bel zerba",
+        "tokens": [
+          "9",
+          "##alb",
+          "##i",
+          "y",
+          "##od",
+          "##h",
+          "##ro",
+          "##b",
+          "bel",
+          "z",
+          "##er",
+          "##ba"
+        ],
+        "subwords_per_space_word": 3.0,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "I've had chest pain for twenty minutes",
+        "tokens": [
+          "i",
+          "'",
+          "ve",
+          "had",
+          "che",
+          "##st",
+          "pain",
+          "for",
+          "tw",
+          "##ent",
+          "##y",
+          "min",
+          "##utes"
+        ],
+        "subwords_per_space_word": 1.8571428571428572,
+        "unknown_tokens": 0
+      }
+    ]
+  },
+  {
+    "model": "onnx-community/gliner_multi-v2.1",
+    "revision": "6ddaeb9413b0e71ad8457da1aab378a165b24058",
+    "license": null,
+    "tokenizer_file_sha256": "914bd3c8fb7b525af9e23b60d0ec7b1248ddb2b99014efd9c02ebeb022f8cab7",
+    "samples": [
+      {
+        "text": "3andi wja3 fi sadri",
+        "tokens": [
+          "▁3",
+          "andi",
+          "▁w",
+          "ja",
+          "3",
+          "▁fi",
+          "▁sa",
+          "dri"
+        ],
+        "subwords_per_space_word": 2.0,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "صدري يوجعني",
+        "tokens": [
+          "▁",
+          "صدر",
+          "ي",
+          "▁يو",
+          "جع",
+          "ني"
+        ],
+        "subwords_per_space_word": 3.0,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "rasi youja3ni barcha",
+        "tokens": [
+          "▁",
+          "rasi",
+          "▁you",
+          "ja",
+          "3",
+          "ni",
+          "▁b",
+          "archa"
+        ],
+        "subwords_per_space_word": 2.6666666666666665,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "ma najamch netnaffes",
+        "tokens": [
+          "▁ma",
+          "▁naj",
+          "am",
+          "ch",
+          "▁net",
+          "na",
+          "ffe",
+          "s"
+        ],
+        "subwords_per_space_word": 2.6666666666666665,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "3andi sokkor ama taw 3andi doukha",
+        "tokens": [
+          "▁3",
+          "andi",
+          "▁so",
+          "kkor",
+          "▁ama",
+          "▁taw",
+          "▁3",
+          "andi",
+          "▁dou",
+          "kha"
+        ],
+        "subwords_per_space_word": 1.6666666666666667,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "3andi douleur fi sadri",
+        "tokens": [
+          "▁3",
+          "andi",
+          "▁d",
+          "ouleur",
+          "▁fi",
+          "▁sa",
+          "dri"
+        ],
+        "subwords_per_space_word": 1.75,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "3andi 7aja ghriba fi batni",
+        "tokens": [
+          "▁3",
+          "andi",
+          "▁7",
+          "aja",
+          "▁gh",
+          "riba",
+          "▁fi",
+          "▁bat",
+          "ni"
+        ],
+        "subwords_per_space_word": 1.8,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "9albi yodhrob bel zerba",
+        "tokens": [
+          "▁9",
+          "al",
+          "bi",
+          "▁yo",
+          "d",
+          "hrob",
+          "▁bel",
+          "▁z",
+          "erba"
+        ],
+        "subwords_per_space_word": 2.25,
+        "unknown_tokens": 0
+      },
+      {
+        "text": "I've had chest pain for twenty minutes",
+        "tokens": [
+          "▁I",
+          "'",
+          "ve",
+          "▁had",
+          "▁chest",
+          "▁pain",
+          "▁for",
+          "▁",
+          "twenty",
+          "▁minutes"
+        ],
+        "subwords_per_space_word": 1.4285714285714286,
+        "unknown_tokens": 0
+      }
+    ]
+  }
+]

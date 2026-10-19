@@ -1,0 +1,150 @@
+{
+  "reference_cases": 36,
+  "reference_sha256": "d2bca776e1905f892398efc6b0e9c44a5ab21b3728f70c482f7a1c234d6aade5",
+  "nlp_signature": "8609f41521d092549bec2780a9e92ad50c7094e48214445acf9cf49f06b3a4a4",
+  "entity_identity": {
+    "tp": 49,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "entity_exact_span_and_name": {
+    "tp": 48,
+    "fp": 1,
+    "fn": 1,
+    "precision": 0.9795918367346939,
+    "recall": 0.9795918367346939,
+    "f1": 0.9795918367346939
+  },
+  "entity_span_detection": {
+    "tp": 48,
+    "fp": 1,
+    "fn": 1,
+    "precision": 0.9795918367346939,
+    "recall": 0.9795918367346939,
+    "f1": 0.9795918367346939
+  },
+  "per_kind": {
+    "symptom": {
+      "tp": 30,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "condition": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "medication": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "vital": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "attributes": [
+    {
+      "attribute": "dose_value",
+      "reference_count": 2,
+      "entity_found_count": 2,
+      "correct_count": 2,
+      "end_to_end_accuracy": 1.0,
+      "accuracy_on_found_entities": 1.0
+    },
+    {
+      "attribute": "duration_seconds",
+      "reference_count": 2,
+      "entity_found_count": 2,
+      "correct_count": 2,
+      "end_to_end_accuracy": 1.0,
+      "accuracy_on_found_entities": 1.0
+    },
+    {
+      "attribute": "experiencer",
+      "reference_count": 49,
+      "entity_found_count": 49,
+      "correct_count": 49,
+      "end_to_end_accuracy": 1.0,
+      "accuracy_on_found_entities": 1.0
+    },
+    {
+      "attribute": "medication_role",
+      "reference_count": 5,
+      "entity_found_count": 5,
+      "correct_count": 5,
+      "end_to_end_accuracy": 1.0,
+      "accuracy_on_found_entities": 1.0
+    },
+    {
+      "attribute": "onset",
+      "reference_count": 1,
+      "entity_found_count": 1,
+      "correct_count": 1,
+      "end_to_end_accuracy": 1.0,
+      "accuracy_on_found_entities": 1.0
+    },
+    {
+      "attribute": "severity",
+      "reference_count": 6,
+      "entity_found_count": 6,
+      "correct_count": 6,
+      "end_to_end_accuracy": 1.0,
+      "accuracy_on_found_entities": 1.0
+    },
+    {
+      "attribute": "status",
+      "reference_count": 49,
+      "entity_found_count": 49,
+      "correct_count": 49,
+      "end_to_end_accuracy": 1.0,
+      "accuracy_on_found_entities": 1.0
+    },
+    {
+      "attribute": "temporality",
+      "reference_count": 49,
+      "entity_found_count": 49,
+      "correct_count": 49,
+      "end_to_end_accuracy": 1.0,
+      "accuracy_on_found_entities": 1.0
+    },
+    {
+      "attribute": "value",
+      "reference_count": 5,
+      "entity_found_count": 5,
+      "correct_count": 5,
+      "end_to_end_accuracy": 1.0,
+      "accuracy_on_found_entities": 1.0
+    }
+  ],
+  "reference_status": "assistant_authored_manual_reference_pending_human_review",
+  "reference_status_counts": {
+    "assistant_authored_manual_reference_pending_human_review": 36
+  },
+  "reference_reviewers": [],
+  "caveats": [
+    "Not a clinician-validated clinical benchmark or independent human annotation.",
+    "Entities are latest structured facts in four scored domains; other fact kinds are outside scope.",
+    "Name identity and typed evidence-span detection are separate metrics. Attributes may align by exact typed span when names differ.",
+    "Attribute accuracy on found entities excludes misses; end-to-end accuracy includes misses.",
+    "Attribute rows cover specified reference attributes only; no claim of attribute precision on unspecified values.",
+    "No urgency labels, doctor answers, original urgency metadata or ML outputs used."
+  ]
+}

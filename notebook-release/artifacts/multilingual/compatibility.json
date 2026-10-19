@@ -1,0 +1,20 @@
+{
+  "saved_extraction_signature": "c0fdcff4c0c15c8e9fb9647775f68b231289a364344d6e8e185981d9cd2a97d8",
+  "feature_schema": "clinical_projection_v3",
+  "projection_sha256": "7118f2db8f1df5d54a01dc980868463a5adfd9913c60e60504fdf9b9b3c332e1",
+  "facts_view_sha256": "bf55f3c209259be3e95f55e65622cffb6afc9d618cb7886274de21c2ca9eb536",
+  "fact_kinds": [
+    "anatomy",
+    "condition",
+    "context",
+    "demographic",
+    "medication",
+    "symptom",
+    "vital"
+  ],
+  "candidate_sha256": "fee288298d6fafe63d053cc8fa4047442bb7949abb77022058067a27375eec5e",
+  "deployed_sha256": "0c1674c14c74e222bd5dc310502bdb03372389ddc6c9680e788bcb8312d1bc4a",
+  "original_sha256": "af8972d40cf290df746ace5569feb78060991c1785fc2ffdbe4108220c2eeaca",
+  "source_sha256": "85e40ee05e7241ae263ab20a9f3362ea6be9f89c86206fce13e86d0169c68520",
+  "purpose": "Explicit structured-state adapter; projection compatibility is not clinical validation."
+}

@@ -1,0 +1,10 @@
+.notebook_runtime/
+.ipynb_checkpoints/
+__pycache__/
+.venv/
+
+# Required historical score/diagnostic tables (the parent repo ignores CSVs).
+!artifacts/integration_v3/calibration_validation.csv
+!artifacts/integration_v3/validation_comparison.csv
+!artifacts/integration_v3/validation_predictions.csv
+!artifacts/ml_regression/ensemble_validation_scores.csv

@@ -1,0 +1,52 @@
+{
+  "records": 2546,
+  "partition": "validation_selection",
+  "classifier_retrained": false,
+  "threshold_tuned": false,
+  "calibration_refitted": false,
+  "threshold": 0.15,
+  "candidate_sha256": "fee288298d6fafe63d053cc8fa4047442bb7949abb77022058067a27375eec5e",
+  "extraction_signature": "6d8a59cfc1ad759f7bd9a19ffad24f30c41b5ed6bb1da1290f8b2722ac2f1fff",
+  "reference": "English weak annotations, already used in model development; not independent clinical accuracy",
+  "before": {
+    "threshold": 0.15,
+    "macro_f1": 0.9119519386375224,
+    "emergency_precision": 0.7900641025641025,
+    "emergency_recall": 0.9517374517374517,
+    "false_positives": 131,
+    "false_negatives": 25,
+    "true_positives": 493,
+    "true_negatives": 1897,
+    "roc_auc": 0.9801104993412686
+  },
+  "after": {
+    "threshold": 0.15,
+    "macro_f1": 0.9113323133894147,
+    "emergency_precision": 0.7897271268057785,
+    "emergency_recall": 0.9498069498069498,
+    "false_positives": 131,
+    "false_negatives": 26,
+    "true_positives": 492,
+    "true_negatives": 1897,
+    "roc_auc": 0.9798915568146338
+  },
+  "after_score_diagnostics": {
+    "brier": 0.03674402217771297,
+    "log_loss": 0.1364631304835819,
+    "ece_10_bins": 0.010696055180422458
+  },
+  "changed_predictions": 3,
+  "mean_absolute_score_change": 0.0007767102046402096,
+  "source_and_models_preserved": true,
+  "phase1_reference": {
+    "threshold": 0.15,
+    "macro_f1": 0.9108231173380035,
+    "emergency_precision": 0.7884615384615384,
+    "emergency_recall": 0.9498069498069498,
+    "false_positives": 132,
+    "false_negatives": 26,
+    "true_positives": 492,
+    "true_negatives": 1896,
+    "roc_auc": 0.9799591434206819
+  }
+}

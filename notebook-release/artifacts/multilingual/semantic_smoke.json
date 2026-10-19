@@ -1,0 +1,893 @@
+{
+  "rss_mb": 1506.33203125,
+  "model": {
+    "model": "onnx-community/gliner_multi-v2.1",
+    "revision": "6ddaeb9413b0e71ad8457da1aab378a165b24058",
+    "upstream": "urchade/gliner_multi-v2.1",
+    "artifact": "model.onnx",
+    "license": "Apache-2.0 upstream",
+    "runtime": "CPU FP32 ONNX",
+    "load_seconds": 4.646329200011678,
+    "medical_finetuning": false,
+    "tunisian_validation": false,
+    "threshold": 0.5,
+    "score_is_calibrated": false,
+    "upstream_training": "General NER; upstream reports synthetic Pile-Mistral teacher data"
+  },
+  "examples": [
+    {
+      "text": "My heart is fluttering.",
+      "facts": [],
+      "ml": {
+        "status": "insufficient_input",
+        "reason": "No understood current clinical facts for the patient; clarification is required.",
+        "emergency_label": null,
+        "prediction": null,
+        "model_score_emergency": null,
+        "model_score_non_emergency": null,
+        "raw_score_emergency": null,
+        "raw_score_non_emergency": null,
+        "score_is_clinically_calibrated": false,
+        "classification_threshold": null,
+        "model_version": null,
+        "calibration_metadata": {
+          "clinical_validation": false,
+          "tunisian_validation": false
+        },
+        "emergency_score": null,
+        "non_emergency_score": null,
+        "threshold": null,
+        "clinically_calibrated": false,
+        "tunisian_clinical_generalization_established": false,
+        "input_has_recognized_clinical_facts": false
+      },
+      "next_question": {
+        "field": null,
+        "priority": 105,
+        "reason": "Clinical complaint not understood; request clarification without inferring a diagnosis.",
+        "templates": {
+          "en": "Please describe what is bothering you and where you feel it.",
+          "tn_arabizi": "Fasser chnowa m9al9ek w win t7ess bih.",
+          "tn_arabic": "فسر شنوة مقلقك ووين تحس بيه."
+        },
+        "id": "67fae67b-8d4e-4d5c-a347-792e9a06274c:1:None",
+        "text": "Please describe what is bothering you and where you feel it.",
+        "language": "en",
+        "patient_experiencer": "patient",
+        "answer_options": [],
+        "allow_free_text": true,
+        "template_version": "adaptive_templates_1",
+        "validation_status": "unreviewed_prototype",
+        "source_guidance": [
+          "https://www.who.int/tools/triage"
+        ],
+        "question_priority_is_clinically_validated": false
+      },
+      "rules": {
+        "rule_version": "clinical_screens_1",
+        "critical_flags_detected": false,
+        "triggered_rules": [],
+        "rule_results": [
+          {
+            "rule_id": "chest_dyspnea",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Current chest pain with shortness of breath.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "symptom.breath.current_status",
+              "symptom.chest.current_status"
+            ],
+            "source": "https://www.nhs.uk/symptoms/chest-pain/",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "severe_breathing",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Severe breathing difficulty or explicit inability to breathe.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "symptom.breath.severity_or_functional_impairment"
+            ],
+            "source": "https://www.nhs.uk/symptoms/shortness-of-breath/",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "stroke_signs",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Sudden focal weakness, face droop or speech difficulty; recent resolved signs also matter.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "symptom.focal_neurology",
+              "symptom.focal_neurology.onset_or_event_time"
+            ],
+            "source": "https://www.nhs.uk/conditions/stroke/symptoms/",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "unresponsive",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Currently unconscious or unresponsive, not a recovered faint.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "symptom.unresponsive.current_status"
+            ],
+            "source": "https://cdn.who.int/media/docs/default-source/integrated-health-services-(ihs)/csy/iitt/iitt_adult.pdf?sfvrsn=b2a91431_1",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "heavy_bleeding",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Current heavy/uncontrolled bleeding.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "symptom.bleed_severe.current_status"
+            ],
+            "source": "https://cdn.who.int/media/docs/default-source/integrated-health-services-(ihs)/csy/iitt/iitt_adult.pdf?sfvrsn=b2a91431_1",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "neurologic_infection_cluster",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Age >=12: two of altered mental state, stiff neck, fever/hypothermia or headache.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "demographic.age",
+              "symptom.confusion.current_status",
+              "symptom.fever.current_status",
+              "symptom.headache.current_status",
+              "symptom.neck_stiffness.current_status"
+            ],
+            "source": "https://cdn.who.int/media/docs/default-source/integrated-health-services-(ihs)/csy/iitt/iitt_adult.pdf?sfvrsn=b2a91431_1",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "extreme_heart_rate",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Age >=12: current heart rate <50 or >150 beats/minute.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "demographic.age",
+              "vital.heart_rate"
+            ],
+            "source": "https://cdn.who.int/media/docs/default-source/integrated-health-services-(ihs)/csy/iitt/iitt_adult.pdf?sfvrsn=b2a91431_1",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "high_risk_vitals",
+            "status": "insufficient_information",
+            "priority": "urgent_review",
+            "justification": "Age >=12: HR <60/>130; RR <10/>30; temperature <36/>39 C; SpO2 <92%. Prompt clinician review, not automatically a red criterion.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "demographic.age",
+              "vital.heart_rate",
+              "vital.oxygen_saturation",
+              "vital.respiratory_rate",
+              "vital.temperature"
+            ],
+            "source": "https://cdn.who.int/media/docs/default-source/integrated-health-services-(ihs)/csy/iitt/iitt_adult.pdf?sfvrsn=b2a91431_1",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          }
+        ],
+        "missing_information": [
+          "demographic.age",
+          "symptom.bleed_severe.current_status",
+          "symptom.breath.current_status",
+          "symptom.breath.severity_or_functional_impairment",
+          "symptom.chest.current_status",
+          "symptom.confusion.current_status",
+          "symptom.fever.current_status",
+          "symptom.focal_neurology",
+          "symptom.focal_neurology.onset_or_event_time",
+          "symptom.headache.current_status",
+          "symptom.neck_stiffness.current_status",
+          "symptom.unresponsive.current_status",
+          "vital.heart_rate",
+          "vital.oxygen_saturation",
+          "vital.respiratory_rate",
+          "vital.temperature"
+        ],
+        "no_trigger_does_not_establish_safety": true,
+        "validation_status": "unvalidated_prototype",
+        "emergency_guidance": null
+      }
+    },
+    {
+      "text": "My stomach hurts.",
+      "facts": [],
+      "ml": {
+        "status": "insufficient_input",
+        "reason": "No understood current clinical facts for the patient; clarification is required.",
+        "emergency_label": null,
+        "prediction": null,
+        "model_score_emergency": null,
+        "model_score_non_emergency": null,
+        "raw_score_emergency": null,
+        "raw_score_non_emergency": null,
+        "score_is_clinically_calibrated": false,
+        "classification_threshold": null,
+        "model_version": null,
+        "calibration_metadata": {
+          "clinical_validation": false,
+          "tunisian_validation": false
+        },
+        "emergency_score": null,
+        "non_emergency_score": null,
+        "threshold": null,
+        "clinically_calibrated": false,
+        "tunisian_clinical_generalization_established": false,
+        "input_has_recognized_clinical_facts": false
+      },
+      "next_question": {
+        "field": null,
+        "priority": 105,
+        "reason": "Clinical complaint not understood; request clarification without inferring a diagnosis.",
+        "templates": {
+          "en": "Please describe what is bothering you and where you feel it.",
+          "tn_arabizi": "Fasser chnowa m9al9ek w win t7ess bih.",
+          "tn_arabic": "فسر شنوة مقلقك ووين تحس بيه."
+        },
+        "id": "e24fbe09-8740-4d01-bed4-9a20619fc038:1:None",
+        "text": "Please describe what is bothering you and where you feel it.",
+        "language": "en",
+        "patient_experiencer": "patient",
+        "answer_options": [],
+        "allow_free_text": true,
+        "template_version": "adaptive_templates_1",
+        "validation_status": "unreviewed_prototype",
+        "source_guidance": [
+          "https://www.who.int/tools/triage"
+        ],
+        "question_priority_is_clinically_validated": false
+      },
+      "rules": {
+        "rule_version": "clinical_screens_1",
+        "critical_flags_detected": false,
+        "triggered_rules": [],
+        "rule_results": [
+          {
+            "rule_id": "chest_dyspnea",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Current chest pain with shortness of breath.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "symptom.breath.current_status",
+              "symptom.chest.current_status"
+            ],
+            "source": "https://www.nhs.uk/symptoms/chest-pain/",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "severe_breathing",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Severe breathing difficulty or explicit inability to breathe.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "symptom.breath.severity_or_functional_impairment"
+            ],
+            "source": "https://www.nhs.uk/symptoms/shortness-of-breath/",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "stroke_signs",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Sudden focal weakness, face droop or speech difficulty; recent resolved signs also matter.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "symptom.focal_neurology",
+              "symptom.focal_neurology.onset_or_event_time"
+            ],
+            "source": "https://www.nhs.uk/conditions/stroke/symptoms/",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "unresponsive",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Currently unconscious or unresponsive, not a recovered faint.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "symptom.unresponsive.current_status"
+            ],
+            "source": "https://cdn.who.int/media/docs/default-source/integrated-health-services-(ihs)/csy/iitt/iitt_adult.pdf?sfvrsn=b2a91431_1",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "heavy_bleeding",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Current heavy/uncontrolled bleeding.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "symptom.bleed_severe.current_status"
+            ],
+            "source": "https://cdn.who.int/media/docs/default-source/integrated-health-services-(ihs)/csy/iitt/iitt_adult.pdf?sfvrsn=b2a91431_1",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "neurologic_infection_cluster",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Age >=12: two of altered mental state, stiff neck, fever/hypothermia or headache.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "demographic.age",
+              "symptom.confusion.current_status",
+              "symptom.fever.current_status",
+              "symptom.headache.current_status",
+              "symptom.neck_stiffness.current_status"
+            ],
+            "source": "https://cdn.who.int/media/docs/default-source/integrated-health-services-(ihs)/csy/iitt/iitt_adult.pdf?sfvrsn=b2a91431_1",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "extreme_heart_rate",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Age >=12: current heart rate <50 or >150 beats/minute.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "demographic.age",
+              "vital.heart_rate"
+            ],
+            "source": "https://cdn.who.int/media/docs/default-source/integrated-health-services-(ihs)/csy/iitt/iitt_adult.pdf?sfvrsn=b2a91431_1",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "high_risk_vitals",
+            "status": "insufficient_information",
+            "priority": "urgent_review",
+            "justification": "Age >=12: HR <60/>130; RR <10/>30; temperature <36/>39 C; SpO2 <92%. Prompt clinician review, not automatically a red criterion.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "demographic.age",
+              "vital.heart_rate",
+              "vital.oxygen_saturation",
+              "vital.respiratory_rate",
+              "vital.temperature"
+            ],
+            "source": "https://cdn.who.int/media/docs/default-source/integrated-health-services-(ihs)/csy/iitt/iitt_adult.pdf?sfvrsn=b2a91431_1",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          }
+        ],
+        "missing_information": [
+          "demographic.age",
+          "symptom.bleed_severe.current_status",
+          "symptom.breath.current_status",
+          "symptom.breath.severity_or_functional_impairment",
+          "symptom.chest.current_status",
+          "symptom.confusion.current_status",
+          "symptom.fever.current_status",
+          "symptom.focal_neurology",
+          "symptom.focal_neurology.onset_or_event_time",
+          "symptom.headache.current_status",
+          "symptom.neck_stiffness.current_status",
+          "symptom.unresponsive.current_status",
+          "vital.heart_rate",
+          "vital.oxygen_saturation",
+          "vital.respiratory_rate",
+          "vital.temperature"
+        ],
+        "no_trigger_does_not_establish_safety": true,
+        "validation_status": "unvalidated_prototype",
+        "emergency_guidance": null
+      }
+    },
+    {
+      "text": "I feel light-headed.",
+      "facts": [
+        {
+          "kind": "symptom",
+          "name": "light_headed",
+          "concept": "lightheaded",
+          "text": "light-headed",
+          "start": 7,
+          "end": 19,
+          "evidence": [
+            {
+              "text": "light-headed",
+              "start": 7,
+              "end": 19,
+              "source": "answer",
+              "turn_id": 0,
+              "kind": "entity"
+            },
+            {
+              "text": "I feel light-headed",
+              "start": 0,
+              "end": 19,
+              "source": "answer",
+              "turn_id": 0,
+              "kind": "context"
+            }
+          ],
+          "extraction_confidence": 0.85,
+          "confidence_basis": "literal_dictionary_and_bounded_context",
+          "status": "confirmed",
+          "temporality": "current",
+          "experiencer": "patient",
+          "acute": false,
+          "recent": false,
+          "severity": null,
+          "duration": null,
+          "resolution_time": null,
+          "event_time": null,
+          "onset": null,
+          "context_start": 0,
+          "context_end": 19,
+          "concept_aliases": [
+            "lightheaded"
+          ],
+          "language": "en_or_fr",
+          "script": "latin",
+          "extraction_provenance": "existing_english_context",
+          "normalized_concept": "symptom.light_headed"
+        }
+      ],
+      "ml": {
+        "emergency_label": 1,
+        "prediction": "emergency",
+        "model_score_emergency": 0.9169698488244893,
+        "model_score_non_emergency": 0.08303015117551071,
+        "raw_score_emergency": 0.8875038241136745,
+        "raw_score_non_emergency": 0.11249617588632554,
+        "score_is_clinically_calibrated": false,
+        "score_calibration": "sigmoid",
+        "score_reference": "weak_binary_annotations",
+        "patient_state_revision": 1,
+        "ml_feature_schema": "clinical_projection_v3",
+        "model_candidate_only": true,
+        "classification_threshold": 0.15,
+        "threshold_reference": "experimental_validation_not_decision_policy",
+        "model_version": "experimental_v3",
+        "model_sha256": "fee288298d6fafe63d053cc8fa4047442bb7949abb77022058067a27375eec5e",
+        "calibration_metadata": {
+          "method": "sigmoid",
+          "fit_domain": "English questions with weak annotations",
+          "fit_partition": "separate calibration-fit validation subset",
+          "clinical_validation": false,
+          "tunisian_validation": false
+        },
+        "feature_compatibility": "validated_projection_schema",
+        "status": "ok",
+        "emergency_score": 0.9169698488244893,
+        "non_emergency_score": 0.08303015117551071,
+        "threshold": 0.15,
+        "clinically_calibrated": false,
+        "tunisian_clinical_generalization_established": false,
+        "input_has_recognized_clinical_facts": true
+      },
+      "next_question": null,
+      "rules": {
+        "rule_version": "clinical_screens_1",
+        "critical_flags_detected": false,
+        "triggered_rules": [],
+        "rule_results": [
+          {
+            "rule_id": "chest_dyspnea",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Current chest pain with shortness of breath.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "symptom.breath.current_status",
+              "symptom.chest.current_status"
+            ],
+            "source": "https://www.nhs.uk/symptoms/chest-pain/",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "severe_breathing",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Severe breathing difficulty or explicit inability to breathe.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "symptom.breath.severity_or_functional_impairment"
+            ],
+            "source": "https://www.nhs.uk/symptoms/shortness-of-breath/",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "stroke_signs",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Sudden focal weakness, face droop or speech difficulty; recent resolved signs also matter.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "symptom.focal_neurology",
+              "symptom.focal_neurology.onset_or_event_time"
+            ],
+            "source": "https://www.nhs.uk/conditions/stroke/symptoms/",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "unresponsive",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Currently unconscious or unresponsive, not a recovered faint.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "symptom.unresponsive.current_status"
+            ],
+            "source": "https://cdn.who.int/media/docs/default-source/integrated-health-services-(ihs)/csy/iitt/iitt_adult.pdf?sfvrsn=b2a91431_1",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "heavy_bleeding",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Current heavy/uncontrolled bleeding.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "symptom.bleed_severe.current_status"
+            ],
+            "source": "https://cdn.who.int/media/docs/default-source/integrated-health-services-(ihs)/csy/iitt/iitt_adult.pdf?sfvrsn=b2a91431_1",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "neurologic_infection_cluster",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Age >=12: two of altered mental state, stiff neck, fever/hypothermia or headache.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "demographic.age",
+              "symptom.confusion.current_status",
+              "symptom.fever.current_status",
+              "symptom.headache.current_status",
+              "symptom.neck_stiffness.current_status"
+            ],
+            "source": "https://cdn.who.int/media/docs/default-source/integrated-health-services-(ihs)/csy/iitt/iitt_adult.pdf?sfvrsn=b2a91431_1",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "extreme_heart_rate",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Age >=12: current heart rate <50 or >150 beats/minute.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "demographic.age",
+              "vital.heart_rate"
+            ],
+            "source": "https://cdn.who.int/media/docs/default-source/integrated-health-services-(ihs)/csy/iitt/iitt_adult.pdf?sfvrsn=b2a91431_1",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "high_risk_vitals",
+            "status": "insufficient_information",
+            "priority": "urgent_review",
+            "justification": "Age >=12: HR <60/>130; RR <10/>30; temperature <36/>39 C; SpO2 <92%. Prompt clinician review, not automatically a red criterion.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "demographic.age",
+              "vital.heart_rate",
+              "vital.oxygen_saturation",
+              "vital.respiratory_rate",
+              "vital.temperature"
+            ],
+            "source": "https://cdn.who.int/media/docs/default-source/integrated-health-services-(ihs)/csy/iitt/iitt_adult.pdf?sfvrsn=b2a91431_1",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          }
+        ],
+        "missing_information": [
+          "demographic.age",
+          "symptom.bleed_severe.current_status",
+          "symptom.breath.current_status",
+          "symptom.breath.severity_or_functional_impairment",
+          "symptom.chest.current_status",
+          "symptom.confusion.current_status",
+          "symptom.fever.current_status",
+          "symptom.focal_neurology",
+          "symptom.focal_neurology.onset_or_event_time",
+          "symptom.headache.current_status",
+          "symptom.neck_stiffness.current_status",
+          "symptom.unresponsive.current_status",
+          "vital.heart_rate",
+          "vital.oxygen_saturation",
+          "vital.respiratory_rate",
+          "vital.temperature"
+        ],
+        "no_trigger_does_not_establish_safety": true,
+        "validation_status": "unvalidated_prototype",
+        "emergency_guidance": null
+      }
+    },
+    {
+      "text": "I feel sick to my stomach.",
+      "facts": [
+        {
+          "kind": "symptom",
+          "name": "feel_sick",
+          "concept": "nausea",
+          "text": "feel sick",
+          "start": 2,
+          "end": 11,
+          "evidence": [
+            {
+              "text": "feel sick",
+              "start": 2,
+              "end": 11,
+              "source": "answer",
+              "turn_id": 0,
+              "kind": "entity"
+            },
+            {
+              "text": "I feel sick to my stomach",
+              "start": 0,
+              "end": 25,
+              "source": "answer",
+              "turn_id": 0,
+              "kind": "context"
+            }
+          ],
+          "extraction_confidence": 0.85,
+          "confidence_basis": "literal_dictionary_and_bounded_context",
+          "status": "confirmed",
+          "temporality": "current",
+          "experiencer": "patient",
+          "acute": false,
+          "recent": false,
+          "severity": null,
+          "duration": null,
+          "resolution_time": null,
+          "event_time": null,
+          "onset": null,
+          "context_start": 0,
+          "context_end": 25,
+          "concept_aliases": [
+            "nausea"
+          ],
+          "language": "en_or_fr",
+          "script": "latin",
+          "extraction_provenance": "existing_english_context",
+          "normalized_concept": "symptom.feel_sick"
+        }
+      ],
+      "ml": {
+        "emergency_label": 1,
+        "prediction": "emergency",
+        "model_score_emergency": 0.487076517411981,
+        "model_score_non_emergency": 0.512923482588019,
+        "raw_score_emergency": 0.4799408968160576,
+        "raw_score_non_emergency": 0.5200591031839423,
+        "score_is_clinically_calibrated": false,
+        "score_calibration": "sigmoid",
+        "score_reference": "weak_binary_annotations",
+        "patient_state_revision": 1,
+        "ml_feature_schema": "clinical_projection_v3",
+        "model_candidate_only": true,
+        "classification_threshold": 0.15,
+        "threshold_reference": "experimental_validation_not_decision_policy",
+        "model_version": "experimental_v3",
+        "model_sha256": "fee288298d6fafe63d053cc8fa4047442bb7949abb77022058067a27375eec5e",
+        "calibration_metadata": {
+          "method": "sigmoid",
+          "fit_domain": "English questions with weak annotations",
+          "fit_partition": "separate calibration-fit validation subset",
+          "clinical_validation": false,
+          "tunisian_validation": false
+        },
+        "feature_compatibility": "validated_projection_schema",
+        "status": "ok",
+        "emergency_score": 0.487076517411981,
+        "non_emergency_score": 0.512923482588019,
+        "threshold": 0.15,
+        "clinically_calibrated": false,
+        "tunisian_clinical_generalization_established": false,
+        "input_has_recognized_clinical_facts": true
+      },
+      "next_question": null,
+      "rules": {
+        "rule_version": "clinical_screens_1",
+        "critical_flags_detected": false,
+        "triggered_rules": [],
+        "rule_results": [
+          {
+            "rule_id": "chest_dyspnea",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Current chest pain with shortness of breath.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "symptom.breath.current_status",
+              "symptom.chest.current_status"
+            ],
+            "source": "https://www.nhs.uk/symptoms/chest-pain/",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "severe_breathing",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Severe breathing difficulty or explicit inability to breathe.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "symptom.breath.severity_or_functional_impairment"
+            ],
+            "source": "https://www.nhs.uk/symptoms/shortness-of-breath/",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "stroke_signs",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Sudden focal weakness, face droop or speech difficulty; recent resolved signs also matter.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "symptom.focal_neurology",
+              "symptom.focal_neurology.onset_or_event_time"
+            ],
+            "source": "https://www.nhs.uk/conditions/stroke/symptoms/",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "unresponsive",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Currently unconscious or unresponsive, not a recovered faint.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "symptom.unresponsive.current_status"
+            ],
+            "source": "https://cdn.who.int/media/docs/default-source/integrated-health-services-(ihs)/csy/iitt/iitt_adult.pdf?sfvrsn=b2a91431_1",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "heavy_bleeding",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Current heavy/uncontrolled bleeding.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "symptom.bleed_severe.current_status"
+            ],
+            "source": "https://cdn.who.int/media/docs/default-source/integrated-health-services-(ihs)/csy/iitt/iitt_adult.pdf?sfvrsn=b2a91431_1",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "neurologic_infection_cluster",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Age >=12: two of altered mental state, stiff neck, fever/hypothermia or headache.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "demographic.age",
+              "symptom.confusion.current_status",
+              "symptom.fever.current_status",
+              "symptom.headache.current_status",
+              "symptom.neck_stiffness.current_status"
+            ],
+            "source": "https://cdn.who.int/media/docs/default-source/integrated-health-services-(ihs)/csy/iitt/iitt_adult.pdf?sfvrsn=b2a91431_1",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "extreme_heart_rate",
+            "status": "insufficient_information",
+            "priority": "critical",
+            "justification": "Age >=12: current heart rate <50 or >150 beats/minute.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "demographic.age",
+              "vital.heart_rate"
+            ],
+            "source": "https://cdn.who.int/media/docs/default-source/integrated-health-services-(ihs)/csy/iitt/iitt_adult.pdf?sfvrsn=b2a91431_1",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          },
+          {
+            "rule_id": "high_risk_vitals",
+            "status": "insufficient_information",
+            "priority": "urgent_review",
+            "justification": "Age >=12: HR <60/>130; RR <10/>30; temperature <36/>39 C; SpO2 <92%. Prompt clinician review, not automatically a red criterion.",
+            "supporting_facts": [],
+            "evidence": [],
+            "missing_required_information": [
+              "demographic.age",
+              "vital.heart_rate",
+              "vital.oxygen_saturation",
+              "vital.respiratory_rate",
+              "vital.temperature"
+            ],
+            "source": "https://cdn.who.int/media/docs/default-source/integrated-health-services-(ihs)/csy/iitt/iitt_adult.pdf?sfvrsn=b2a91431_1",
+            "validation_status": "unvalidated_prototype",
+            "patient_experiencer": "patient"
+          }
+        ],
+        "missing_information": [
+          "demographic.age",
+          "symptom.bleed_severe.current_status",
+          "symptom.breath.current_status",
+          "symptom.breath.severity_or_functional_impairment",
+          "symptom.chest.current_status",
+          "symptom.confusion.current_status",
+          "symptom.fever.current_status",
+          "symptom.focal_neurology",
+          "symptom.focal_neurology.onset_or_event_time",
+          "symptom.headache.current_status",
+          "symptom.neck_stiffness.current_status",
+          "symptom.unresponsive.current_status",
+          "vital.heart_rate",
+          "vital.oxygen_saturation",
+          "vital.respiratory_rate",
+          "vital.temperature"
+        ],
+        "no_trigger_does_not_establish_safety": true,
+        "validation_status": "unvalidated_prototype",
+        "emergency_guidance": null
+      }
+    }
+  ]
+}
